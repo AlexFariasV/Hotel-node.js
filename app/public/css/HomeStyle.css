@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #0a1128;
+    --white-color: #ffffff;
+    --dark-gray-color: #2e3038;
+    --gap: 3rem;
+    --light-gray-color: #eeeeee;
+
+
+    --font-small: 1.1rem;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* =======================Config================================= */
+.main-bg {
+   /*  background-image: url("/img/confetti-doodles.svg"); */
+   background-color: #071d66;
+    background-position: center center;
+    background-size: cover;
+    color: var(--white-color);
+}
+
+.white-bg {
+    background-color: var(--white-color);
+}
+
+.main-content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 8rem var(--gap);
+}
+
+.section {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu-space {
+    height: 65px;
+}
+
+/* =======================Config================================= */
+/* ============================================================== */
+/* ====================menu====================================== */
+.menu {
+    background-color: var(--white-color);
+    position: fixed;
+    min-width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 0.05rem solid var(--light-gray-color);
+    z-index: 9999;
+}
+
+.menu-conatnt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+    color: var(--primary-color);
+}
+
+.menu h1 a {
+    color: inherit;
+
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+
+}
+
+.menu ul button {
+    padding: 20px 30px;
+    text-align: center;
+    color: var(--white-color);
+    border-radius: 20px;
+    font-size: 1.2rem;
+    background-color: #0e2e99;
+    cursor: pointer;
+    border: none;
+    transition: all 200ms ease-in-out;
+}
+
+.menu ul button:hover {
+    background-color: #071d66;
+    /*    background-color: transparent;
+    border: 2px solid #0AAA;
+    color: #0AAAA8; */
+}
+
+.menu ul li a {
+    display: block;
+    padding: 2.4rem;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    text-transform: lowercase;
+    font-size: var(--font-small);
+    position: relative;
+}
+
+.h1_menu {
+    padding: 2.4rem 0;    
+}
+
+.menu ul li a::after {
+    content: '';
+    position: absolute;
+    background: #071d66;
+    width: 0;
+    bottom: 2rem;
+    left: 50%;
+    height: 0.3rem;
+    transition: all 300ms ease-in-out;
+}
+
+.menu ul li a:hover::after {
+    width: 50%;
+    left: 25%;
+}
+.space-button{
+    margin-left: 30px;
+}
+
+/* ====================menu================================= */
+
+
+/* =====================@media================================= */
+@media(max-width:915px) {
+    .menu-nav {
+        display: none;
+    }
+}
+
+/* =====================@media================================= */
