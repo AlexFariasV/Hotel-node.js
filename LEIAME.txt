@@ -1,0 +1,7 @@
+para adicionar as depencencias use:
+
+npm config set strict-ssl false 
+
+npm install
+
+npm install -g nodemon
