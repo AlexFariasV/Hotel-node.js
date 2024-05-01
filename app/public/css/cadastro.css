@@ -1,0 +1,15 @@
+/*  */
+.erroForm {
+  color: red;
+  display: block;
+  font-weight: bolder;
+  width: 100%;
+  padding: 10px 0 0 15px;
+  font-size: 0.9rem;
+}
+
+.erroInput {
+  border: solid 1px red !important;
+}
+
+/*  *//*# sourceMappingURL=cadastro.css.map */

@@ -7,7 +7,7 @@ const TarefasControl = {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
           console.log(errors);
-          return res.render("pages/template-home", {
+          return res.render("pages/cadastro", {
             dados: req.body,
             listaErros: errors,
             pagina: "cadastro",
@@ -17,7 +17,7 @@ const TarefasControl = {
         }
         try {
             const resultados = await tarefasModel.create(req.body)
-            res.render("pages/template-home", { pagina: "home", logado: null, });
+            res.render("pages/home", { pagina: "home", logado: null, });
 
         } catch (error) {
             return error;

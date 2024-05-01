@@ -12,13 +12,13 @@ router.get("/", function (req, res) {
 /* ======================================================================================= */
 /* router.get("/login", function (req, res) {
     res.render("pages/template-home", {pagina:"login", logado:null});
-});
+}); */
 router.get("/cadastro", function (req, res) {
-    res.render("pages/template-home", {pagina:"cadastro", logado:null, retorno: null, listaErros: null, dados: null
+    res.render("pages/cadastro", {pagina:"cadastro", logado:null, retorno: null, listaErros: null, dados: null
       });
 });
 router.post("/cadastro", TarefasControl.regrasValidacao,  async function (req, res) {
     TarefasControl.Criarussuario(req,res)
 });
- */
+
 module.exports = router;
