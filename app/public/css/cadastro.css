@@ -1,4 +1,4 @@
-/*  */
+/* =======================validator========================= */
 .erroForm {
   color: red;
   display: block;
@@ -9,7 +9,63 @@
 }
 
 .erroInput {
-  border: solid 1px red !important;
+  border: solid 2 px red !important;
 }
 
-/*  *//*# sourceMappingURL=cadastro.css.map */
+/* =======================validator========================= */
+body {
+  background-color: #0e2e99;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  padding: 50px;
+  width: 100%;
+}
+
+.link a {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.Pages-cadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+}
+
+.form-cadastro {
+  background-color: #fff;
+  border-radius: 8px;
+}
+.form-cadastro form {
+  padding: 10px;
+}
+.form-cadastro form .Content-h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+.form-cadastro form input {
+  width: 100%;
+  padding: 15px 10px;
+  margin: 8px 0;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+.form-cadastro form input:focus {
+  outline: 2px solid #0e2e99;
+}
+.form-cadastro form button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}/*# sourceMappingURL=cadastro.css.map */

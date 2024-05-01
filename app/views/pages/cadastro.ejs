@@ -46,11 +46,18 @@
 
 
 <main>
-    <div class="login-page">
+    <div class="link">
+        <a href="/">
+            <h2><- Voltar</h2>
+        </a>
+    </div>
+    <div class="Pages-cadastro">
 
         <div class="form-cadastro">
             <form action="cadastro" method="post"  class = "login-form">
-                <h2>Cadastro</h2>
+                <div class="Content-h1">
+                    <h2>Cadastro</h2>
+                </div>
 
                 <input type="text" name="nome" id="nome" class="<%= cssErroBorda.nome %>" placeholder = "Seu nome" value="<%=valorCampos.nome%>">
                 <span class="<%= cssErro.nome %>"><%= msgErro.nome %></span><br>
