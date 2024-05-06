@@ -1,5 +1,5 @@
 body {
-    background-image: url("/img/hotel2.jpg");
+    background-image: url("/img/hotel7.jpg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -32,11 +32,16 @@ body {
     text-align: center;
     border-radius: 10px;
     .Content-h1{
-        margin: 10px 0;
+        margin: 13px 0;
         
     }
     form{
         padding: 15px;
+        h2{
+            margin: 10px 0;
+            font-size: 2rem;
+            
+        }
         input{
             width: 100%;
             margin: 14px 0;
@@ -48,10 +53,12 @@ body {
         }
         button {
             background-color: blue;
-            padding: 10px 20%;
+            padding: 10px 35%;
             margin: 20px 0;
             color:#fff;
             border-radius: 10px;
+            border: none;
+            cursor: pointer;
             &:hover{
                 background-color: rgb(22, 22, 140);  
             }

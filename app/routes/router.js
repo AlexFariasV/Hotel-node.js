@@ -9,10 +9,13 @@ router.get("/", function (req, res) {
     res.render("pages/home", {pagina:"home", logado:null});
 });
 
-/* ======================================================================================= */
-/* router.get("/login", function (req, res) {
-    res.render("pages/template-home", {pagina:"login", logado:null});
-}); */
+/* ====================================Login=================================================== */
+
+router.get("/login", function (req, res) {
+    res.render("pages/login", {pagina:"login", logado:null});
+});
+
+/* =====================================Cadastro================================================= */
 router.get("/cadastro", function (req, res) {
     res.render("pages/cadastro", {pagina:"cadastro", logado:null, retorno: null, listaErros: null, dados: null
       });
@@ -20,5 +23,6 @@ router.get("/cadastro", function (req, res) {
 router.post("/cadastro", TarefasControl.regrasValidacao,  async function (req, res) {
     TarefasControl.Criarussuario(req,res)
 });
+/* ============================================================================================= */
 
 module.exports = router;

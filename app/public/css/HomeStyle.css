@@ -4,8 +4,6 @@
     --dark-gray-color: #2e3038;
     --gap: 3rem;
     --light-gray-color: #eeeeee;
-
-
     --font-small: 1.1rem;
 
 }
@@ -14,6 +12,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
 }
 
 
