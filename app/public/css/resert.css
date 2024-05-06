@@ -1,0 +1,65 @@
+/* Reset CSS */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin and padding reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote,
+figcaption,
+figure,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Remove default hyperlink styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default button styles */
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

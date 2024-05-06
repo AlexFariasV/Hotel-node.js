@@ -71,7 +71,7 @@ a {
 }
 
 .menu h1 {
-    font-size: 2.3rem;
+    font-size: 2.1rem ;
     color: var(--primary-color);
 }
 
@@ -88,7 +88,7 @@ a {
 }
 
 .menu ul button {
-    padding: 20px 30px;
+    padding: 20px 35px;
     text-align: center;
     color: var(--white-color);
     border-radius: 20px;
@@ -108,7 +108,7 @@ a {
 
 .menu ul li a {
     display: block;
-    padding: 2.4rem;
+    padding: 2rem 2.4rem;
     font-size: 1.6rem;
     color: var(--primary-color);
     text-transform: lowercase;
@@ -125,7 +125,7 @@ a {
     position: absolute;
     background: #071d66;
     width: 0;
-    bottom: 2rem;
+    bottom: 1.7rem;
     left: 50%;
     height: 0.3rem;
     transition: all 300ms ease-in-out;
@@ -140,13 +140,71 @@ a {
 }
 
 /* ====================menu================================= */
+/* ====================intro================================= */
 
+.Container-intro{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    flex-direction: column;
+    height: 155vh;
+    text-align: center;
+    color: #333;
+}
+.Container-intro h1{
+    margin: 30px 0;
+    font-size: 3rem;
+}
+.Container-intro p{
+    margin-bottom: 30px;
+}
+.Container-intro button{
+    padding: 15px 25px;
+    margin: 7px 8px 50px 8px;
+    cursor: pointer;
+}
+.Container-intro .button1{
+    background-color: #333;
+    color: #fff;
+    transition: all 300ms ease-in-out;
+    border: #333 solid 2px;
+}
+.Container-intro .button1:hover{
+    background-color: #fff;
+    color: #333;
+}
+.Container-intro .button2{
+    color: #333;
+    border: #333 solid 2px;
+    background-color: #fff;
+    transition: all 300ms ease-in-out;
+}
+.Container-intro .button2:hover{
+    background-color: #333;
+    color: #fff;
+}
+.image-container{
+    margin: 30px 0;
+}
+
+.Container-intro img{
+    max-width: 95%;
+    max-height: 95%;
+   
+}   
+
+/* ====================intro================================= */
 
 /* =====================@media================================= */
 @media(max-width:915px) {
     .menu-nav {
         display: none;
     }
+}
+@media(max-width:1040px){
+    .Container-intro h1{
+        font-size: 2rem;
+    }  
 }
 
 /* =====================@media================================= */

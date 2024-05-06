@@ -1,10 +1,22 @@
+body {
+  background-image: url("/img/hotel2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #333;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* =======================validator========================= */
 .erroForm {
   color: red;
   display: block;
   font-weight: bolder;
   width: 100%;
-  padding: 10px 0 0 15px;
   font-size: 0.9rem;
 }
 
@@ -13,59 +25,43 @@
 }
 
 /* =======================validator========================= */
-body {
-  background-color: #0e2e99;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.Container-form {
+  max-width: 380px;
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
 }
-
-main {
-  padding: 50px;
-  width: 100%;
-}
-
-.link a {
-  color: #fff;
-  font-size: 1.2rem;
-}
-
-.link a:hover {
-  text-decoration: underline;
-}
-
-.Pages-cadastro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-  width: 100%;
-}
-
-.form-cadastro {
-  background-color: #fff;
-  border-radius: 8px;
-}
-.form-cadastro form {
-  padding: 10px;
-}
-.form-cadastro form .Content-h1 {
-  display: flex;
-  justify-content: center;
-  font-size: 1.5rem;
+.Container-form .Content-h1 {
   margin: 10px 0;
 }
-.form-cadastro form input {
+.Container-form form {
+  padding: 15px;
+}
+.Container-form form input {
   width: 100%;
-  padding: 15px 10px;
-  margin: 8px 0;
+  margin: 14px 0;
+  padding: 10px;
   outline: none;
-  border-radius: 5px;
-  border: 1px solid #333;
 }
-.form-cadastro form input:focus {
-  outline: 2px solid #0e2e99;
+.Container-form form input:focus {
+  outline: 2px solid blue;
 }
-.form-cadastro form button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+.Container-form form button {
+  background-color: blue;
+  padding: 10px 20%;
+  margin: 20px 0;
+  color: #fff;
+  border-radius: 10px;
+}
+.Container-form form button:hover {
+  background-color: rgb(22, 22, 140);
+}
+.Container-form form .link {
+  color: blue;
+}
+.Container-form form .link:hover {
+  color: rgb(22, 22, 140);
+}
+.Container-form form span {
+  text-align: left;
 }/*# sourceMappingURL=cadastro.css.map */

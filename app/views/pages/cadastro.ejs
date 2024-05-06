@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro - hotel-node </title>
 
-    <link rel="stylesheet" href="css/HomeStyle.css">
     <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/resert.css">
 </head>
 <body>
     <%
@@ -46,37 +46,29 @@
 
 
 <main>
-    <div class="link">
-        <a href="/">
-            <h2><- Voltar</h2>
-        </a>
-    </div>
-    <div class="Pages-cadastro">
-
-        <div class="form-cadastro">
-            <form action="cadastro" method="post"  class = "login-form">
+        <div class="Container-form">
+            <form action="cadastro" method="post"  class="form">
                 <div class="Content-h1">
-                    <h2>Cadastro</h2>
+                    <a href="/"><h2>Cadastro</h2></a>
                 </div>
 
                 <input type="text" name="nome" id="nome" class="<%= cssErroBorda.nome %>" placeholder = "Seu nome" value="<%=valorCampos.nome%>">
-                <span class="<%= cssErro.nome %>"><%= msgErro.nome %></span><br>
+                <span class="<%= cssErro.nome %>"><%= msgErro.nome %></span>
 
 
                 <input type="text" name="email"  class="<%= cssErroBorda.email %>"id="email" placeholder = "Seu e-mail" value="<%=valorCampos.email%>">
-                <span class="<%= cssErro.email %>"><%= msgErro.email %></span><br>
+                <span class="<%= cssErro.email %>"><%= msgErro.email %></span>
 
                 <input type="password" name="senha"  class="<%= cssErroBorda.senha %>" id="senha" placeholder = "Sua senha" value="<%=valorCampos.senha%>">
-                <span class="<%= cssErro.senha %>"><%= msgErro.senha %></span><br>
+                <span class="<%= cssErro.senha %>"><%= msgErro.senha %></span>
 
                 <input type="password" name="c-senha"  class="<%= cssErroBorda['c-senha'] %>" id="c-senha" placeholder = "Confime a senha" value="<%=valorCampos['c-senha']%>">
-                <span class="<%= cssErro['c-senha'] %>"><%= msgErro['c-senha'] %></span><br>
+                <span class="<%= cssErro['c-senha'] %>"><%= msgErro['c-senha'] %></span>
 
                 <button type="submit">Cadastrar</button>
-                <p class="message">Já é cadastrado? <a href="login">Entre</a></p>
+                <p class="message">Já é cadastrado? <a href="login" class="link">Entre</a></p>
             </form>
         </div>
-    </div>
 </main>
     
 </body>
