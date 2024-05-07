@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="stylesheet" href="css/resert.css">
 </head>
+
 <body>
     <%
     var msgErro = {nome:"", email:"", senha:"", "c-senha":""}
     var cssErro = {nome:"", email:"", senha:"", "c-senha":""}
-    let valorCampos = {nome:"", email:"", senha:"", "c-senha":""}
     var cssErroBorda = {nome:"", email:"", senha:"", "c-senha":""}
+    let valorCampos = {nome:"", email:"", senha:"", "c-senha":""}
     if(dados && dados!=null){
         valorCampos = dados
     }
@@ -21,20 +22,20 @@
     if(listaErros){
         listaErros.errors.forEach((itemErro)=>{
             if(itemErro.path == "nome"){
-                msgErro.nome = itemErro.msg
-                cssErro.nome = "erroForm"
+                msgErro.nome = itemErro.msg;
+                cssErro.nome = "erroForm";
                 cssErroBorda.nome = "erroInput";
             } else if(itemErro.path == "email"){
-                msgErro.email = itemErro.msg
-                cssErro.email = "erroForm"
+                msgErro.email = itemErro.msg;
+                cssErro.email = "erroForm";
                 cssErroBorda.email = "erroInput";
             } else if(itemErro.path == "senha"){
-                msgErro.senha = itemErro.msg
-                cssErro.senha = "erroForm"
+                msgErro.senha = itemErro.msg;
+                cssErro.senha = "erroForm";
                 cssErroBorda.senha = "erroInput";
             } else if(itemErro.path == "c-senha"){
-                msgErro["c-senha"] = itemErro.msg
-                cssErro["c-senha"] = "erroForm"
+                msgErro["c-senha"] = itemErro.msg;
+                cssErro["c-senha"] = "erroForm";
                 cssErroBorda['c-senha'] = "erroInput";
             }
         });
@@ -52,9 +53,10 @@
                     <a href="/"><h2>Cadastro</h2></a>
                 </div>
 
-                <input type="text" name="nome" id="nome" class="<%= cssErroBorda.nome %>" placeholder = "Seu nome" value="<%=valorCampos.nome%>">
-                <span class="<%= cssErro.nome %>"><%= msgErro.nome %></span>
-
+                <input class="<%= cssErroBorda.nome %>" type="text" name="nome" id="nome" placeholder="Seu nome " value="<%=valorCampos.nome%>">
+                <span class="<%= cssErro.nome %>">
+                    <%= msgErro.nome %>
+                </span>
 
                 <input type="text" name="email"  class="<%= cssErroBorda.email %>"id="email" placeholder = "Seu e-mail" value="<%=valorCampos.email%>">
                 <span class="<%= cssErro.email %>"><%= msgErro.email %></span>
