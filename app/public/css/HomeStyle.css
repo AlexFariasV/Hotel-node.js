@@ -51,6 +51,7 @@ a {
 /* =======================Config================================= */
 /* ============================================================== */
 /* ====================menu====================================== */
+
 .menu {
     background-color: var(--white-color);
     position: fixed;
@@ -93,14 +94,14 @@ a {
     color: var(--white-color);
     border-radius: 20px;
     font-size: 1.2rem;
-    background-color: #0e2e99;
+    background-color: blue;
     cursor: pointer;
     border: none;
     transition: all 200ms ease-in-out;
 }
 
 .menu ul button:hover {
-    background-color: #071d66;
+    background-color: #123198;
     /*    background-color: transparent;
     border: 2px solid #0AAA;
     color: #0AAAA8; */
@@ -141,13 +142,18 @@ a {
 
 /* ====================menu================================= */
 /* ====================intro================================= */
+.main-contentIntro{
+    max-width: 120rem;
+    margin: 0 auto;
+    
+}
 
 .Container-intro{
     display: flex;
     align-items:center ;
     justify-content: center;
     flex-direction: column;
-    height: 155vh;
+    padding: 60px   50px;
     text-align: center;
     color: #333;
 }
@@ -196,7 +202,7 @@ a {
 /* ====================intro================================= */
 
 /* =====================@media================================= */
-@media(max-width:915px) {
+@media(max-width:1010px) {
     .menu-nav {
         display: none;
     }
