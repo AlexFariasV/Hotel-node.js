@@ -7,6 +7,13 @@
 
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="stylesheet" href="css/resert.css">
+
+
+    <!-- SIMPLE NOTIFY - Notificações -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+    <script src="/js/notify.js"></script>
+    <link rel="stylesheet" href="/css/notify.css">
 </head>
 
 <body>
@@ -25,18 +32,33 @@
                 msgErro.nome = itemErro.msg;
                 cssErro.nome = "erroForm";
                 cssErroBorda.nome = "erroInput";
+                %>
+                    <script>notify('Verifique o campo nome', '<%= msgErro.nome %>', 'error')</script>
+                <%
+            
             } else if(itemErro.path == "email"){
                 msgErro.email = itemErro.msg;
                 cssErro.email = "erroForm";
+                cssErroBorda.cpf = "erroInput";
+                %>
+                    <script>notify('Verifique o campo email', '<%= msgErro.email %>', 'error')</script>
+                <%
                 cssErroBorda.email = "erroInput";
             } else if(itemErro.path == "senha"){
                 msgErro.senha = itemErro.msg;
                 cssErro.senha = "erroForm";
                 cssErroBorda.senha = "erroInput";
+                %>
+                    <script>notify('Verifique o campo senha', '<%= msgErro.senha %>', 'error')</script>
+                <%
+
             } else if(itemErro.path == "c-senha"){
                 msgErro["c-senha"] = itemErro.msg;
                 cssErro["c-senha"] = "erroForm";
                 cssErroBorda['c-senha'] = "erroInput";
+                %>
+                    <script>notify('Verifique se a senha está igual', '<%= msgErro["c-senha"] %>', 'error')</script>
+                <%
             }
         });
     } 

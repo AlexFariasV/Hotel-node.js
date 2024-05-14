@@ -1,0 +1,20 @@
+.custom-notify {
+    display: grid;
+    grid-template-columns: auto 2fr;
+    row-gap: 12px;
+    padding-bottom: 12px;
+    box-shadow: none;
+    border: none;
+}
+
+.custom-notify::before {
+    position: relative;
+    order: 1;
+    grid-column: span 2;
+    border-radius: 0px;
+    background-color: blue;
+}
+
+.custom-notify .sn-notify-icon {
+    color: blue;
+}

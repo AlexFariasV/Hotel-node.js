@@ -3,11 +3,17 @@ var router = express.Router();
 var TarefasControl = require("../controllers/control")
 
 const { body, validationResult } = require("express-validator");
+const { notifyMessages } = require('../util/funcao')
 
 
 router.get("/", function (req, res) {
-    res.render("pages/home", {pagina:"home", logado:null});
+    res.render("pages/home");
 });
+router.get("/test", function (req, res) {
+    const msgs = notifyMessages(req, res)
+    res.render("pages/test", { msgs });
+});
+
 
 /* ====================================Login=================================================== */
 

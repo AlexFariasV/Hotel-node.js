@@ -1,5 +1,8 @@
 const tarefasModel = require("../models/models");
-const moment = require("moment");
+
+const { notifyMessages } = require('../util/funcao')
+
+
 const { body, validationResult } = require("express-validator");
 const TarefasControl = {
 
@@ -16,8 +19,13 @@ const TarefasControl = {
           });
         }
         try {
-            const resultados = await tarefasModel.create(req.body)
-            res.render("pages/home", { pagina: "home", logado: null, });
+            await tarefasModel.create(req.body)
+
+            const msgs = notifyMessages(req, res)
+            
+            req.flash('success', `Bem-vindo, ${req.body.nome}`)
+
+            res.render("pages/test", {msgs});
 
         } catch (error) {
             return error;
@@ -50,6 +58,7 @@ const TarefasControl = {
         body("c-senha")
             .notEmpty()
             .withMessage('Campo vazio.')
+            .bail()
             .custom((value, { req }) => {
                 const senha = req.body.senha
                 if (value != senha) {
