@@ -49,10 +49,10 @@ body {
             outline: none;
         }
         input:focus{
-            outline: 2px solid blue;
+            outline: 2px solid #018abe;
         }
         button {
-            background-color: blue;
+            background-color: #018abe;
             padding: 10px 35%;
             margin: 20px 0;
             color:#fff;
@@ -60,13 +60,13 @@ body {
             border: none;
             cursor: pointer;
             &:hover{
-                background-color: rgb(22, 22, 140);  
+                background-color: #02457a;  
             }
         }
         .link{
-            color: blue; 
+            color: #018abe; 
             &:hover{
-                color: rgb(22, 22, 140);  
+                color:#02457a;  
             }
         }
         span{

@@ -6,6 +6,9 @@
     --light-gray-color: #eeeeee;
     --font-small: 1.1rem;
 
+    --color-1: #018abe;
+    --color2: #02457a;
+
 }
 
 * {
@@ -20,7 +23,7 @@
 /* =======================Config================================= */
 .main-bg {
    /*  background-image: url("/img/confetti-doodles.svg"); */
-   background-color: #071d66;
+   background-color: var(--color-1);
     background-position: center center;
     background-size: cover;
     color: var(--white-color);
@@ -94,14 +97,14 @@ a {
     color: var(--white-color);
     border-radius: 20px;
     font-size: 1.2rem;
-    background-color: blue;
+    background-color: var(--color-1);
     cursor: pointer;
     border: none;
     transition: all 200ms ease-in-out;
 }
 
 .menu ul button:hover {
-    background-color: #123198;
+    background-color: var(--color2);
     /*    background-color: transparent;
     border: 2px solid #0AAA;
     color: #0AAAA8; */
@@ -200,6 +203,66 @@ a {
 }   
 
 /* ====================intro================================= */
+/* ====================Quality================================= */
+.Container__Quality {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+.Container__Quality .Text__Quality h1{
+    margin-bottom: 30px;
+    font-size: 3.5rem;
+}
+.Container__Quality .Text__Quality p{
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+.Box__Quality{
+    display: flex;
+
+}
+.Quality_img{
+    background-color: #97cadb;
+    margin: 0 10px;
+    border-radius: 5px;
+    min-height: 450px;
+    transition: all 200ms ease-in-out;
+    max-width: 350px;
+
+    
+}
+.Quality_img:hover{
+    transform: scale(1.04);
+   /*  box-shadow: 1px 1px 15px #333;   */
+    cursor: pointer;
+}
+.Quality_img p{
+    padding: 5px 15px;
+}
+.Quality_img img{
+    max-width: 350px;
+    padding: 15px;
+
+}
+.Box__Quality:hover .Quality_img:not(:hover) {
+    opacity: 0.7;
+}
+
+
+
+/* ====================Quality================================= */
+
+
+
+
+
+
+
+
+
+
 
 /* =====================@media================================= */
 @media(max-width:1010px) {

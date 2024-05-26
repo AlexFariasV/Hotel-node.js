@@ -45,7 +45,7 @@ form {
         border-radius: 3px;
         margin-bottom: 5px;
         &:focus{
-            outline: 2px solid blue;
+            outline: 2px solid #018abe;
         }
     }
     button{
@@ -53,13 +53,13 @@ form {
        width: 100%;
        padding: 10px;
        cursor: pointer;
-       background-color: blue;
+       background-color: #018abe;
        color: #fff;
        font-size: 17px;
-       border: 2px solid blue;
+       border: 2px solid #018abe;
        transition: all 300ms ease-in;
        &:hover{
-        color: blue;
+        color: #018abe;
         background-color: #fff;
        }
     }
@@ -80,7 +80,7 @@ form {
         text-align: left;
         margin: 5px 0;
         a{
-            color: blue;
+            color: #018abe;
             &:hover{
                 text-decoration: underline;
             
