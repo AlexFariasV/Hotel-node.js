@@ -5,3 +5,11 @@
 
 //
 
+O que fazer 
+
+- criar um novo banco de dados so para esse projeto 
+- paginação 
+- continuar a homePages 
+- Colocar estrelas de avalição 
+
+

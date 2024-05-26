@@ -251,20 +251,19 @@ a {
 }
 
 
-
 /* ====================Quality================================= */
 
-
-
-
-
-
-
-
-
-
-
 /* =====================@media================================= */
+@media(max-width:1180px) {
+    .Box__Quality{
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+    }
+    .Box__Quality .Quality_img{
+        margin: 10px;
+    }
+}
 @media(max-width:1010px) {
     .menu-nav {
         display: none;
