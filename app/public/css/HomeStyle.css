@@ -224,12 +224,13 @@ a {
 
 }
 .Quality_img{
-    background-color: #97cadb;
+    background-color: #eeebeb;
     margin: 0 10px;
     border-radius: 5px;
     min-height: 450px;
     transition: all 200ms ease-in-out;
     max-width: 350px;
+    color: #333;
 
     
 }

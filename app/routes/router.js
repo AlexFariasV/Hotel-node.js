@@ -9,9 +9,9 @@ const { notifyMessages } = require('../util/funcao')
 router.get("/", function (req, res) {
     res.render("pages/home");
 });
-router.get("/test", function (req, res) {
+router.get("/quartos", function (req, res) {
     const msgs = notifyMessages(req, res)
-    res.render("pages/test", { msgs });
+    res.render("pages/quartos", { msgs });
 });
 
 

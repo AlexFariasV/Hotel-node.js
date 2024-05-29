@@ -23,9 +23,9 @@ const TarefasControl = {
 
             const msgs = notifyMessages(req, res)
             
-            req.flash('success', `Bem-vindo, ${req.body.nome}`)
+            /* req.flash('success', `Bem-vindo, ${req.body.nome}`) */
 
-            res.render("pages/test", {msgs});
+            /* res.render("pages/quartos", {msgs}); */
 
         } catch (error) {
             return error;
