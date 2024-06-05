@@ -43,24 +43,23 @@ form input {
   border: 1px solid #333;
   border-radius: 3px;
   margin-bottom: 5px;
-}
+}/* 
 form input:focus {
-  outline: 2px solid #018abe;
-}
+  outline: 2px solid;
+} */
 form button {
   margin: 20px 0;
   width: 100%;
   padding: 10px;
   cursor: pointer;
-  background-color: #018abe;
+  background-color: var(--color-1);
   color: #fff;
   font-size: 17px;
-  border: 2px solid #018abe;
+  border: 2px solid var(--color-1);
   transition: all 300ms ease-in;
 }
 form button:hover {
-  color: #018abe;
-  background-color: #fff;
+  background-color: var(--color-2)
 }
 form .linha-container {
   display: flex;
@@ -80,7 +79,7 @@ form .p_text {
   margin: 5px 0;
 }
 form .p_text a {
-  color: #018abe;
+  color: var(--color-1);
 }
 form .p_text a:hover {
   text-decoration: underline;

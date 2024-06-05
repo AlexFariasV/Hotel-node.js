@@ -1,11 +1,11 @@
 body {
-  background-image: url("/img/hotel7.jpg");
+  /* background-image: url("/img/hotel7.jpg"); */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #333;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,53 +25,10 @@ body {
 }
 
 /* =======================validator========================= */
-.Container-form {
-  max-width: 380px;
-  background: #fff;
-  text-align: center;
-  border-radius: 10px;
-}
-.Container-form .Content-h1 {
-  margin: 13px 0;
-}
-.Container-form form {
-  padding: 15px;
-}
-.Container-form form h2 {
-  margin: 10px 0;
-  font-size: 2rem;
-}
-.Container-form form input {
-  width: 100%;
-  margin: 14px 0;
-  padding: 10px;
-  outline: none;
-}
-.Container-form form input:focus {
-  outline: 2px solid #018abe;
-}
-.Container-form form .button {
-  background-color: var(--color-1);
-  padding: 10px 35%;
-  margin: 20px 0;
-  color: #fff;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-}
-.Container-form form button:hover {
-  background-color: var(--color-2);
-}
-.Container-form form .link {
-  color: var(--color-1);
-}
-.Container-form form .link:hover {
-  color: var(--color-2);
-}
-.Container-form form span {
-  text-align: left;
-}
- .demo {
+
+
+
+.demo {
   text-align: left;
   padding: 10px;
 }

@@ -21,7 +21,7 @@ const TarefasControl = {
         try {
             await tarefasModel.create(req.body)
 
-            res.render("pages/client/quartos", {logado: null})
+            /* res.render("pages/client/quartos", {logado: null}) */
 
         } catch (error) {
             return error;
