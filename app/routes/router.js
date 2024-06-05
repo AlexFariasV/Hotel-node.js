@@ -9,11 +9,6 @@ const { notifyMessages } = require('../util/funcao')
 router.get("/", function (req, res) {
     res.render("pages/home");
 });
-router.get("/quartos", function (req, res) {
-    const msgs = notifyMessages(req, res)
-    res.render("pages/quartos", { msgs });
-});
-
 
 /* ====================================Login=================================================== */
 
@@ -30,5 +25,19 @@ router.post("/cadastro", TarefasControl.regrasValidacao,  async function (req, r
     TarefasControl.Criarussuario(req,res)
 });
 /* ============================================================================================= */
+
+
+router.get("/quartos", function (req, res) {
+    res.render("pages/client/quartos");
+});
+router.get("/perfil", function (req, res) {
+    res.render("pages/client/perfil");
+});
+
+
+router.get("/config", function (req, res) {
+    res.render("pages/client/config");
+})
+
 
 module.exports = router;

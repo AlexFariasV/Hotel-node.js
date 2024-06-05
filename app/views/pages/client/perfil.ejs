@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+
+    <%- include('../../partial/link.ejs')  %>
+
+    <link rel="stylesheet" href="css/client/perfil.css">
+
+</head>
+
+<body>
+
+    <%- include('../../partial/menu.ejs')  %>
+
+    <div class="Container__perfil">
+        <form action="perfil" method="post" enctype = "multipart/form-data">
+            <h1>Meu Perfil</h1>
+            <p>
+                <input type="text" name="nome" id="nome" placeholder = "Nome">
+               
+            </p>
+            <p>
+                <input type="text" name="email" id="email" placeholder = "E-mail">
+                
+            </p>
+            <p>
+                <input type="text" name="nome-usuario" id="nome-usuario" placeholder = "Nome de Usuario">
+              
+            </p>
+            <p>
+                <input type="text" name="cpf" id="cpf" placeholder = "CPF">
+              
+            </p>
+            <p>
+                <input type="file" name="imagem-perfil" id="imagem-perfil" onchange = "loadImg()">
+                <img id="img-preview">               
+            </p>
+            <p style="text-align: left;">
+                <input type="password" name="senha" id="senha" placeholder="senha de Usuario">
+                <span class="aviso">Não preencha este campo para manter a senha atual</span>
+            </p>
+            <p>
+                <input type="submit" value="Alterar dados perfil" />
+            </p>
+        </form>
+        <h1>Minhas Reservas</h1>
+        <p>Você ainda não possui reservas!</p>
+
+    </div>
+
+
+    <script src="/js/load.js"></script>
+</body>
+
+</html>

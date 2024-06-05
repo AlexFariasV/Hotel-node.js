@@ -6,14 +6,11 @@
     <title>Cadastro - hotel Node </title>
 
     <link rel="stylesheet" href="css/cadastro.css">
-    <link rel="stylesheet" href="css/resert.css">
+
+    <%- include('../partial/link.ejs')  %>
 
 
-    <!-- SIMPLE NOTIFY - Notificações -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
-    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
-    <script src="/js/notify.js"></script>
-    <link rel="stylesheet" href="/css/notify.css">
+
 </head>
 
 <body>
@@ -89,9 +86,17 @@
                 <input type="password" name="c-senha"  class="<%= cssErroBorda['c-senha'] %>" id="c-senha" placeholder = "Confime a senha" value="<%=valorCampos['c-senha']%>">
                 <span class="<%= cssErro['c-senha'] %>"><%= msgErro['c-senha'] %></span>
 
-                <button type="submit">Cadastrar</button>
+                <button class="button">Cadastrar</button>
                 <p class="message">Já é cadastrado? <a href="login" class="link">Entre</a></p>
+
             </form>
+            <div class="demo">
+                <a href="/quartos">
+                    <button class="demo_button">
+                        visitante
+                    </button>
+                </a>
+            </div>
         </div>
 </main>
     

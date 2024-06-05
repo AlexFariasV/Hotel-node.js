@@ -50,8 +50,8 @@ body {
 .Container-form form input:focus {
   outline: 2px solid #018abe;
 }
-.Container-form form button {
-  background-color: #018abe;
+.Container-form form .button {
+  background-color: var(--color-1);
   padding: 10px 35%;
   margin: 20px 0;
   color: #fff;
@@ -60,14 +60,31 @@ body {
   cursor: pointer;
 }
 .Container-form form button:hover {
-  background-color: #02457a;
+  background-color: var(--color-2);
 }
 .Container-form form .link {
-  color: #018abe;
+  color: var(--color-1);
 }
 .Container-form form .link:hover {
-  color: #02457a;
+  color: var(--color-2);
 }
 .Container-form form span {
   text-align: left;
-}/*# sourceMappingURL=cadastro.css.map */
+}
+ .demo {
+  text-align: left;
+  padding: 10px;
+}
+ .demo_button{
+  padding: 10px 5%;
+  background-color: var(--color-1);
+  border: 2px solid  var(--color-1);
+  color: var(--white-color);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 200ms ease-in-out;
+}
+.demo_button:hover{
+  background-color: transparent;
+  color: var(--color-1);
+}

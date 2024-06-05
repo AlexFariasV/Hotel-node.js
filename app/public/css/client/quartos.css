@@ -1,12 +1,13 @@
 body{
     background-color: #eeeeee;
+    overflow: auto;
 }
 .header{
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     padding: 1.5rem 3rem;
-    background-color: var(--color-1);
+    background-color:  #794c20;
     color: #fff;
     align-items: center;
 }
@@ -20,5 +21,14 @@ body{
 
 .config{
     display: flex;
+    gap: 10px;
+    cursor: pointer;
 
+}
+
+@media(max-width:900px){
+    .header-nav ul, .config{
+        display: none;
+        
+    }
 }

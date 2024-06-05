@@ -21,11 +21,7 @@ const TarefasControl = {
         try {
             await tarefasModel.create(req.body)
 
-            const msgs = notifyMessages(req, res)
-            
-            /* req.flash('success', `Bem-vindo, ${req.body.nome}`) */
-
-            /* res.render("pages/quartos", {msgs}); */
+            res.render("pages/client/quartos", {logado: null})
 
         } catch (error) {
             return error;
