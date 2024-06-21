@@ -1,5 +1,5 @@
 body {
-  background-image: url("/img/hotel7.jpg");
+  /* background-image: url("/img/hotel7.jpg"); */
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,77 +10,3 @@ body {
   justify-content: center;
   flex-flow: column;
 }
-
-.h2_text {
-  color: #fff;
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-}
-
-form {
-  max-width: 500px;
-  width: 100%;
-  margin: 10px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-form h2 {
-  margin: 10px 0;
-  font-size: 2rem;
-}
-form label {
-  margin: 10px 0 6px 0;
-  display: flex;
-  text-align: end;
-}
-form input {
-  width: 100%;
-  padding: 15px;
-  outline: none;
-  border: 1px solid #333;
-  border-radius: 3px;
-  margin-bottom: 5px;
-}/* 
-form input:focus {
-  outline: 2px solid;
-} */
-form button {
-  margin: 20px 0;
-  width: 100%;
-  padding: 10px;
-  cursor: pointer;
-  background-color: var(--color-1);
-  color: #fff;
-  font-size: 17px;
-  border: 2px solid var(--color-1);
-  transition: all 300ms ease-in;
-}
-form button:hover {
-  background-color: var(--color-2)
-}
-form .linha-container {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-form .linha-container .linha {
-  flex: 1;
-  height: 1px;
-  background-color: black;
-}
-form .linha-container .ou {
-  margin: 0 10px;
-}
-form .p_text {
-  text-align: left;
-  margin: 5px 0;
-}
-form .p_text a {
-  color: var(--color-1);
-}
-form .p_text a:hover {
-  text-decoration: underline;
-}/*# sourceMappingURL=Login.css.map */

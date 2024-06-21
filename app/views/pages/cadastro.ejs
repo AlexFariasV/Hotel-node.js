@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,19 +14,47 @@
 
 </head>
 
-<body>
+<body>  
+
+    <section class="container__form">
+        <form action="cadastro" method="post">
+
+
+            <input type="text" name="name" placeholder="nome" maxlength="80">
+
+            <input type="email" placeholder="email" name="email">
+
+            <input type="date" name="nasc" id="">
+
+            <input type="text" name="cpf" placeholder="cpf" maxlength="80">
+
+            <input type="password" name="senha" placeholder="senha" maxlength="60">
+
+            <input type="password" name="senha-c" placeholder="confirma senha"  maxlength="60">
+
+            <button>Cadastrar</button>
+
+        </form>
+        
+        <div class="demo">
+            <a href="/quartos">
+                <button class="demo_button">
+                    Entrar com visitante
+                </button>
+            </a>
+            <a href="/">
+                <button class="demo_button">
+                    volta para home
+                </button>
+            </a>
+        </div>
+
+    </section>
 
     
 
 
     
-    <!-- <div class="demo">
-        <a href="/quartos">
-            <button class="demo_button">
-                visitante
-            </button>
-        </a>
-    </div> -->
 
 
 </body>

@@ -9,6 +9,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 /* =======================validator========================= */
@@ -26,6 +27,17 @@ body {
 
 /* =======================validator========================= */
 
+.container__form{
+  max-width: 500px;
+  width: 100%;
+  background-color: red;
+  padding: 15px;
+}
+.container__form input{
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+}
 
 
 .demo {
@@ -34,14 +46,14 @@ body {
 }
  .demo_button{
   padding: 10px 5%;
-  background-color: var(--color-1);
-  border: 2px solid  var(--color-1);
-  color: var(--white-color);
+  background-color: blue;
+  border: 2px solid  blue;
+  color: white;
   cursor: pointer;
   border-radius: 10px;
   transition: all 200ms ease-in-out;
 }
 .demo_button:hover{
   background-color: transparent;
-  color: var(--color-1);
+  color: blue;
 }
