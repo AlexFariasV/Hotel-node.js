@@ -86,6 +86,7 @@ CREATE TABLE `usuario` (
   `user_usuario` varchar(45) DEFAULT NULL,
   `senha_usuario` char(60) DEFAULT NULL,
   `email_usuario` varchar(45) DEFAULT NULL,
+  `cpf_usuario` CHAR(14) NOT NULL,
   `fone_usuario` varchar(11) DEFAULT NULL,
   `tipo_usuario` int NOT NULL DEFAULT '1',
   `status_usuario` int DEFAULT '1',

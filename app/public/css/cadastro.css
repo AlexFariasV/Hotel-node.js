@@ -1,5 +1,5 @@
 body {
-  /* background-image: url("/img/hotel7.jpg"); */
+  background-image: url("/img/home2.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,34 +26,63 @@ body {
 }
 
 /* =======================validator========================= */
+.text {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 2rem;
+}
 
-.container__form{
+.container__form {
   max-width: 500px;
   width: 100%;
-  background-color: red;
-  padding: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
 }
-.container__form input{
+
+.container__form input {
   width: 100%;
   margin: 8px 0;
   padding: 10px;
-}
+  outline: none;
+  border-radius: 8px;
+  margin: 15px 0;
+  border: 1px solid #333;
 
+}
 
 .demo {
   text-align: left;
   padding: 10px;
+
 }
- .demo_button{
+
+.demo_button {
   padding: 10px 5%;
-  background-color: blue;
-  border: 2px solid  blue;
+  background-color: #3f9cc1;
+  border: 2px solid #3f9cc1;
   color: white;
   cursor: pointer;
   border-radius: 10px;
   transition: all 200ms ease-in-out;
+  margin-bottom: 5px;
 }
-.demo_button:hover{
+
+.demo_button:hover {
   background-color: transparent;
   color: blue;
+}
+
+/* password */
+
+.password-container{
+  position: relative;
+  width: 100%;
+}
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 8px);
+  cursor: pointer;
+  color: #666;
 }

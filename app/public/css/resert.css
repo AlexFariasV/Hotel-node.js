@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color_primary: #3f9cc1;
+  --white: #fff;
+}
+
 /* Reset CSS */
 
 /* Box sizing */
-*{
-  font-family: "Poppins", sans-serif;
+* {
+  font-family: 'Roboto Slab', serif;
   font-style: normal;
   box-sizing: border-box;
 }
+
 *::before,
 *::after {
   box-sizing: border-box;
@@ -57,4 +64,23 @@ a {
   content: "";
   display: table;
   clear: both;
+}
+
+/* button global */
+
+.cta {
+  background-color: var(--color_primary);
+  width: 100%;
+  padding: 10px 0;
+  margin: 13px 0;
+  cursor: pointer;
+  border: 2px solid var(--color_primary);
+  border-radius: 5px;
+  color: var(--white);
+  font-size: 1rem;
+  transition: all 200ms ease-in-out;
+}
+.cta:hover{
+  background-color: transparent;
+  color: var(--color_primary);
 }

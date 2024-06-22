@@ -8,15 +8,20 @@
 
     <link rel="stylesheet" href="css/cadastro.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
     <%- include('../partial/link.ejs') %>
 
 
 
 </head>
 
-<body>  
+<body>
 
     <section class="container__form">
+
+        <h1 class="text">Hotel Node</h1>
+
         <form action="cadastro" method="post">
 
 
@@ -24,18 +29,26 @@
 
             <input type="email" placeholder="email" name="email">
 
-            <input type="date" name="nasc" id="">
+            <!-- <input type="date" name="nasc" id=""> -->
 
-            <input type="text" name="cpf" placeholder="cpf" maxlength="80">
+            <input type="text" name="cpf" class="cpf" placeholder="cpf" maxlength="80">
+            
+            <div class="password-container">
+                <input type="password" name="senha" id="password" placeholder="senha" maxlength="60">
+                <i id="togglePassword" class="fas fa-eye-slash"></i>
+            </div>
 
-            <input type="password" name="senha" placeholder="senha" maxlength="60">
 
-            <input type="password" name="senha-c" placeholder="confirma senha"  maxlength="60">
+            <div class="password-container">
+                <input type="password" name="senha-c" id="password" placeholder="confirma senha" maxlength="60">
+                <i id="togglePassword" class="fas fa-eye-slash"></i>
+            </div>
 
-            <button>Cadastrar</button>
+
+            <button class="cta">Cadastrar</button>
 
         </form>
-        
+
         <div class="demo">
             <a href="/quartos">
                 <button class="demo_button">
@@ -51,12 +64,8 @@
 
     </section>
 
-    
-
-
-    
-
-
+    <script src="/js/Mascaras.js"></script>
+    <script src="/js/password.js"></script>
 </body>
 
 </html>
