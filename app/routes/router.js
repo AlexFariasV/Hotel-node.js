@@ -18,8 +18,8 @@ router.get("/login", function (req, res) {
 
 /* =====================================Cadastro================================================= */
 router.get("/cadastro", function (req, res) {
-    res.render("pages/cadastro", {pagina:"cadastro", logado:null, retorno: null, listaErros: null, dados: null
-      });
+    res.render("pages/cadastro", {pagina:"cadastro", logado:null, retorno: null, listaErros: null, dados: null, 
+    dadosNotificacao: null  });
 });
 router.post("/cadastro", TarefasControl.regrasValidacao,  async function (req, res) {
     TarefasControl.Criarussuario(req,res)
@@ -28,7 +28,7 @@ router.post("/cadastro", TarefasControl.regrasValidacao,  async function (req, r
 
 
 router.get("/quartos", function (req, res) {
-    res.render("pages/client/quartos");
+    res.render("pages/client/quartos",{logado: null, dadosNotificacao: null,listaErros: null , dados: null});
 });
 router.get("/perfil", function (req, res) {
     res.render("pages/client/perfil");

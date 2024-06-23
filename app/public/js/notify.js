@@ -1,21 +1,18 @@
-function notify(title, text, status) {
-    new Notify ({
-        status: status,
-        title: title,
-        text: text,
+function notify(titulo,  texto, tipo,posicao,duracao=3000) {
+    new Notify({
+        status: tipo,
+        title: titulo,
+        text:texto,
         effect: 'fade',
-        speed: 300,
-        customClass: 'custom-notify',
-        customIcon: '',
+        speed: 500,
         showIcon: true,
-        showCloseButton: false,
+        showCloseButton: true,
         autoclose: true,
-        autotimeout: 3000,
-       /*  autotimeout: 3000000, */
-        notificationsGap: null,
-        notificationsPadding: null,
-        type: 'outline',
-        position: 'right bottom',
+        autotimeout: duracao,
+        gap: 20,
+        distance: 20,
+        type: 1,
+        position: "center", 
         customWrapper: '',
     })
 }

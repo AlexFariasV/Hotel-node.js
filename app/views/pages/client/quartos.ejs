@@ -8,11 +8,19 @@
 
     <%- include('../../partial/link.ejs')  %>
 
-
 </head>
 
 <body>
 
+    <% if (dadosNotificacao) { %>
+        <script>
+            notify("<%= dadosNotificacao.titulo%>","<%= dadosNotificacao.mensagem%>", "<%= dadosNotificacao.tipo%>", "center")
+            if("<%= dadosNotificacao.tipo %>" == "success"){
+                setTimeout(function(){window.location="/quartos"}, 3000)
+            }                        
+        </script>
+    <% } %>
+        
     <%- include('../../partial/menu.ejs')  %>
 
 </body>

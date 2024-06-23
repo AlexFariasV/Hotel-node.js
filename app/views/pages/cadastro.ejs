@@ -18,6 +18,62 @@
 
 <body>
 
+    
+    <%
+    var msgErro = {nome:"", email:"",cpf:"", senha:"","c-senha":""}
+    var cssErro = {nome:"", email:"",cpf:"", senha:"","c-senha":""}
+    var cssErroBorda = {nome:"", email:"",cpf:"", senha:"","c-senha":""}
+    let valorCampos = {nome:"", email:"",cpf:"", senha:"","c-senha":""}
+    if(dados && dados!=null){
+        valorCampos = dados
+    }
+
+    if(listaErros){
+        listaErros.errors.forEach((itemErro)=>{
+            if(itemErro.path == "nome"){
+                msgErro.nome = itemErro.msg
+                cssErro.nome = "erroForm"
+                cssErroBorda.nome = "erroInput"
+                %>
+                    <script>notify('Verifique o campo nome', '<%= msgErro.nome %>', 'error'  )</script>
+                <%
+            } else if(itemErro.path == "email"){
+                msgErro.email = itemErro.msg
+                cssErro.email = "erroForm"
+                cssErroBorda.email = "erroInput"
+                %>
+                    <script>notify('Verifique o campo email', '<%= msgErro.email %>', 'error'  )</script>
+                <%
+               
+            } else if (itemErro.path == "cpf") {
+                msgErro.cpf = itemErro.msg;
+                cssErro.cpf = "erroForm";
+                cssErroBorda.cpf = "erroInput";
+                %>
+                    <script>notify('Verifique o campo cpf', '<%= msgErro.cpf %>', 'error')</script>
+                <%
+            }else if(itemErro.path == "senha"){
+                msgErro.senha = itemErro.msg
+                cssErro.senha = "erroForm"
+                cssErroBorda.senha = "erroInput"
+                %>
+                    <script>notify('Verifique o campo senha', '<%= msgErro.senha %>', 'error'  )</script>
+                <%
+                
+            } else if(itemErro.path == "c-senha"){
+                msgErro["c-senha"] = itemErro.msg
+                cssErro["c-senha"] = "erroForm"
+                cssErroBorda["c-senha"] = "erroInput"
+                %>
+                    <script>notify('Verifique se as senhas estão iguais', '<%= msgErro["c-senha"] %>', 'error'  )</script>
+                <%
+                
+            }
+        });
+    } 
+   
+%>
+
     <section class="container__form">
 
         <h1 class="text">Hotel Node</h1>
@@ -25,27 +81,32 @@
         <form action="cadastro" method="post">
 
 
-            <input type="text" name="name" placeholder="nome" maxlength="80">
+            <input type="text" name="nome" id="nome" placeholder = "Seu nome" value="<%=valorCampos.nome%>" 
+            class="<%= cssErroBorda.nome %>" maxlength="100" autocomplete="off">
+                <span class="<%= cssErro.nome %>"><%= msgErro.nome %></span>
 
-            <input type="email" placeholder="email" name="email">
+            <input type="text" name="email" id="email" placeholder = "Seu e-mail" value="<%=valorCampos.email%>"  class="<%= cssErroBorda.email %>" autocomplete="off">
+                <span class="<%= cssErro.email %>"><%= msgErro.email %></span>
+            <input type="text" name="cpf" id="cpf" autocomplete="off" maxlength="14" class="cpf <%= cssErroBorda.cpf %>" placeholder="CPF" value="<%=valorCampos.cpf%>">
+            <span class="<%= cssErro.cpf %>">
+                <%= msgErro.cpf %>
+            </span>
 
-            <!-- <input type="date" name="nasc" id=""> -->
 
-            <input type="text" name="cpf" class="cpf" placeholder="cpf" maxlength="80">
+           
             
             <div class="password-container">
-                <input type="password" name="senha" id="password" placeholder="senha" maxlength="60">
+                <input type="password" name="senha" id="password" placeholder="senha" maxlength="60" value="<%=valorCampos.senha%>" class="<%= cssErroBorda.senha %>" autocomplete="off">
                 <i id="togglePassword" class="fas fa-eye-slash"></i>
+                <span class="<%= cssErro.senha %>"><%= msgErro.senha %></span>
             </div>
             
             <div class="password-container">
-                <input type="password" name="senha-c" id="password" placeholder="confirma senha" maxlength="60">
+                <input type="password" name="c-senha" id="password" placeholder="confirma senha" maxlength="60" value="<%=valorCampos['c-senha']%>" class="<%= cssErroBorda['c-senha'] %>" autocomplete="off">
                 <i id="togglePassword" class="fas fa-eye-slash"></i>
+                <span class="<%= cssErro['c-senha'] %>"><%= msgErro['c-senha'] %></span>
             </div>
-
-
-            <button class="cta">Cadastrar</button>
-
+            <button type="submit" class="cta">Cadastrar</button>
         </form>
 
         <div class="demo">
