@@ -35,6 +35,9 @@ router.get("/perfil", function (req, res) {
 router.get("/config", function (req, res) {
     res.render("pages/client/config");
 })
-
+/* ======================================adm======================================================= */
+router.get("/adm", function (req, res) {
+    res.render("pages/adm/adm");
+})
 
 module.exports = router;
