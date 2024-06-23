@@ -2,7 +2,6 @@ const tarefasModel = require("../models/models");
 const { body, validationResult } = require("express-validator");
 const { validaCPF } = require('../util/funcao')
 
-
 const TarefasControl = {
 
     Criarussuario: async (req, res) => {
@@ -14,7 +13,6 @@ const TarefasControl = {
                 listaErros: errors,
                 pagina: "cadastro",
                 logado: null
-
             });
         }
         try {
@@ -22,12 +20,11 @@ const TarefasControl = {
 
             res.render("pages/client/quartos", {
                 logado: null, dadosNotificacao: {
-                    titulo: "Cadastro realizado!", 
-                    mensagem: "Novo usuário criado com sucesso!", 
+                    titulo: "Cadastro realizado!",
+                    mensagem: "Novo usuário criado com sucesso!",
                     tipo: "success"
                 }
             })
-
         } catch (error) {
             return error;
         }
@@ -36,7 +33,6 @@ const TarefasControl = {
         body("nome")
             .isLength({ min: 3, max: 45 })
             .withMessage("Nome invalido "),
-
         body("email")
             .isEmail()
             .withMessage("Email invalido ")
@@ -46,14 +42,12 @@ const TarefasControl = {
                     throw new Error('Email já utilizado.');
                 }
                 return true;
-
             }),
         body("cpf")
             .isLength({ min: 14, max: 14 })
             .withMessage("Cpf inválido ")
             .bail()
             .custom(async (value) => {
-
                 if (validaCPF(value)) {
                     const cpf = await tarefasModel.findByCpf(value)
                     if (cpf.length > 0) {
@@ -63,7 +57,6 @@ const TarefasControl = {
                 } else {
                     throw new Error('Cpf inválido');
                 }
-
             }),
 
         body("senha")

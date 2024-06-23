@@ -33,7 +33,7 @@ body {
 }
 
 .container__form {
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   background-color: #fff;
   padding: 20px;
@@ -82,7 +82,7 @@ body {
 #togglePassword {
   position: absolute;
   right: 10px;
-  top: calc(50% - 8px);
+  top: 27px;
   cursor: pointer;
   color: #666;
 }

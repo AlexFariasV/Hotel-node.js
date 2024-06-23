@@ -12,7 +12,7 @@ function notify(titulo,  texto, tipo,posicao,duracao=3000) {
         gap: 20,
         distance: 20,
         type: 1,
-        position: "center", 
+        position: "right bottom", 
         customWrapper: '',
     })
 }

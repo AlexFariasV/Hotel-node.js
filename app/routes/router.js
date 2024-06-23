@@ -5,7 +5,6 @@ var TarefasControl = require("../controllers/control")
 const { body, validationResult } = require("express-validator");
 const { notifyMessages } = require('../util/funcao')
 
-
 router.get("/", function (req, res) {
     res.render("pages/home");
 });
@@ -26,14 +25,12 @@ router.post("/cadastro", TarefasControl.regrasValidacao,  async function (req, r
 });
 /* ============================================================================================= */
 
-
 router.get("/quartos", function (req, res) {
     res.render("pages/client/quartos",{logado: null, dadosNotificacao: null,listaErros: null , dados: null});
 });
 router.get("/perfil", function (req, res) {
     res.render("pages/client/perfil");
 });
-
 
 router.get("/config", function (req, res) {
     res.render("pages/client/config");

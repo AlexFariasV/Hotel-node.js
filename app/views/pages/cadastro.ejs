@@ -12,13 +12,10 @@
 
     <%- include('../partial/link.ejs') %>
 
-
-
 </head>
 
 <body>
 
-    
     <%
     var msgErro = {nome:"", email:"",cpf:"", senha:"","c-senha":""}
     var cssErro = {nome:"", email:"",cpf:"", senha:"","c-senha":""}
@@ -73,34 +70,23 @@
     } 
    
 %>
-
     <section class="container__form">
-
         <h1 class="text">Hotel Node</h1>
-
         <form action="cadastro" method="post">
-
-
             <input type="text" name="nome" id="nome" placeholder = "Seu nome" value="<%=valorCampos.nome%>" 
             class="<%= cssErroBorda.nome %>" maxlength="100" autocomplete="off">
                 <span class="<%= cssErro.nome %>"><%= msgErro.nome %></span>
-
             <input type="text" name="email" id="email" placeholder = "Seu e-mail" value="<%=valorCampos.email%>"  class="<%= cssErroBorda.email %>" autocomplete="off">
                 <span class="<%= cssErro.email %>"><%= msgErro.email %></span>
             <input type="text" name="cpf" id="cpf" autocomplete="off" maxlength="14" class="cpf <%= cssErroBorda.cpf %>" placeholder="CPF" value="<%=valorCampos.cpf%>">
             <span class="<%= cssErro.cpf %>">
                 <%= msgErro.cpf %>
             </span>
-
-
-           
-            
             <div class="password-container">
                 <input type="password" name="senha" id="password" placeholder="senha" maxlength="60" value="<%=valorCampos.senha%>" class="<%= cssErroBorda.senha %>" autocomplete="off">
                 <i id="togglePassword" class="fas fa-eye-slash"></i>
                 <span class="<%= cssErro.senha %>"><%= msgErro.senha %></span>
             </div>
-            
             <div class="password-container">
                 <input type="password" name="c-senha" id="password" placeholder="confirma senha" maxlength="60" value="<%=valorCampos['c-senha']%>" class="<%= cssErroBorda['c-senha'] %>" autocomplete="off">
                 <i id="togglePassword" class="fas fa-eye-slash"></i>
@@ -108,8 +94,12 @@
             </div>
             <button type="submit" class="cta">Cadastrar</button>
         </form>
-
         <div class="demo">
+            <a href="/login">
+                <button class="demo_button">
+                    Ir para  o login 
+                </button>
+            </a>
             <a href="/quartos">
                 <button class="demo_button">
                     Entrar com visitante
@@ -121,9 +111,7 @@
                 </button>
             </a>
         </div>
-
     </section>
-
     <script src="/js/Mascaras.js"></script>
     <script src="/js/password.js"></script>
 </body>
