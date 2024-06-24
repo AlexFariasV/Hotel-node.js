@@ -5,18 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Hotel Node</title>
-    <link rel="stylesheet" href="css/Login.css">
 
-    <%- include('../partial/link.ejs')  %>
+    <link rel="stylesheet" href="css/cadastro.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <%- include('../partial/link.ejs') %>
+
 </head>
 
 <body>
-    <!-- <a href="/">
-        <div class="h2_text">
-            <h2>Hotel-node</h2>
-        </div>
-    </a> -->
+    <%
+var msgErro = {email:"", senha:""}
+var cssErro = {email:"", senha:""}
+var cssErroBorda = {email:"", senha:""}
+let valorCampos = {email:"", senha:""}
+if(dados && dados!=null){
+    valorCampos = dados
+}
+if (listaErros && listaErros.errors) {
+    listaErros.errors.forEach((itemErro) => {
+        if (itemErro.path == "email") {
+            msgErro.email = itemErro.msg;
+            cssErro.email = "erroForm";
+            cssErroBorda.email = "erroInput";
+            %>
+            <script>notify('Verifique o campo email', '<%= msgErro.email %>', 'error'  )</script>
+        <%
+            
+        } else if (itemErro.path == "senha") {
+            msgErro.senha = itemErro.msg;
+            cssErro.senha = "erroForm";
+            cssErroBorda.senha = "erroInput";
+            %>
+            <script>notify('Verifique o campo senha', '<%= msgErro.senha %>', 'error'  )</script>
+        <%
+           
+        }
+    });
+}
 
+%>
+    <section class="container__form">
+        <h1 class="text">Hotel Node</h1>
+        <form action="login" method="post">
+    
+            <input type="email" name="email" id="email" placeholder = "Seu e-mail" value="<%=valorCampos.email%>"  class="<%= cssErroBorda.email %>" autocomplete="off">
+                <span class="<%= cssErro.email %>"><%= msgErro.email %></span>
+
+            <div class="password-container">
+                <input type="password" name="senha" id="password" placeholder="senha" maxlength="60" value="<%=valorCampos.senha%>" class="<%= cssErroBorda.senha %>" autocomplete="off">
+                <i id="togglePassword" class="fas fa-eye-slash"></i>
+                <span class="<%= cssErro.senha %>"><%= msgErro.senha %></span>
+            </div>
+           
+            <button type="submit" class="cta">Cadastrar</button>
+        </form>
+        <div class="demo">
+            <a href="/cadastro">
+                <button class="demo_button">
+                    Ir para o cadastro 
+                </button>
+            </a>
+            <a href="/quartos">
+                <button class="demo_button">
+                    Entrar com visitante
+                </button>
+            </a>
+            <a href="/">
+                <button class="demo_button">
+                    volta para home
+                </button>
+            </a>
+        </div>
+    </section>
+
+
+    <script src="/js/password.js"></script>
 </body>
 
 </html>

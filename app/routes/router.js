@@ -12,8 +12,11 @@ router.get("/", function (req, res) {
 /* ====================================Login=================================================== */
 
 router.get("/login", function (req, res) {
-    res.render("pages/login", {pagina:"login", logado:null});
+    res.render("pages/login", {pagina:"login", logado:null, dados: null, listaErros: null, dadosNotificacao: null});
 });
+router.post('/login', TarefasControl.regrasValidacaoFormLogin, function (req, res) {
+    TarefasControl.logar(req, res);
+})
 
 /* =====================================Cadastro================================================= */
 router.get("/cadastro", function (req, res) {

@@ -3,6 +3,41 @@ const { body, validationResult } = require("express-validator");
 const { validaCPF } = require('../util/funcao')
 
 const TarefasControl = {
+    logar: (req, res) => {
+        const erros = validationResult(req);
+        if (!erros.isEmpty()) {
+            return res.render("pages/login", { pagina: "login", dados: req.body, listaErros: erros, logado: null, dadosNotificacao: null })
+        }
+       /*  if (req.session.autenticado != null) {
+                console.log(req.session.autenticado.tipo)
+            if (req.session.autenticado.tipo == 1) {
+                res.render("pages/template-home", { pagina: "home", listaErros: null,logado: null, dados: null, dadosNotificacao:{titulo: "success", mensagem: "bem-vindo de volta ", tipo:"success"}})
+
+
+            } else if (req.session.autenticado.tipo == 3) {
+                res.render("pages/adm/template-adm", { listaErros: null,logado: null, pagina:"index", dados: null, dadosNotificacao:{titulo: "success", mensagem: "bem-vindo adm ", tipo:"success"}});
+            } else {
+                res.render("pages/login", { listaErros: null,logado: null, dados: null,dadosNotificacao:{titulo: "error", mensagem: "Usuário não permitido", tipo:"erros"} })
+            }
+            
+        }else {
+            res.render("pages/login", { listaErros: null, dados: null,logado:null, dadosNotificacao:{titulo: "error", mensagem: "Usuário senha invalido ", tipo:"erros"} })
+        } */
+
+    },
+    regrasValidacaoFormLogin: [
+        body("email")
+            .isEmail()
+            .withMessage("Email invalido "),
+        body("senha")
+            .isLength({ min: 8, max: 30 })
+            .withMessage("Senha inválida, deve conter pelo menos 8 caracteres")
+            .bail()
+            .matches(/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/)
+            .withMessage("Senha inválida, deve conter pelo menos 1 letra, 1 número e 1 caractere especial"),
+
+    ],
+
 
     Criarussuario: async (req, res) => {
         const errors = validationResult(req);
@@ -78,8 +113,6 @@ const TarefasControl = {
                 return true;
             })
     ],
-
-
 
 
 }
