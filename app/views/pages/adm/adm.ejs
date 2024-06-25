@@ -5,8 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adm</title>
+
+    <%- include('../../partial/link.ejs') %>
+
 </head>
 <body>
+
+    <% if (dadosNotificacao) { %>
+        <script>
+            notify("<%= dadosNotificacao.titulo%>","<%= dadosNotificacao.mensagem%>", "<%= dadosNotificacao.tipo%>", "center")
+            if("<%= dadosNotificacao.tipo %>" == "success"){
+                setTimeout(function(){window.location="/adm"}, 3000)
+            }                        
+        </script>
+    <% } %>
 
     <h1> Adm </h1>
     

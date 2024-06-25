@@ -1,20 +1,22 @@
 var express = require("express");
 var router = express.Router();
 var TarefasControl = require("../controllers/control")
-
 const { body, validationResult } = require("express-validator");
 const { notifyMessages } = require('../util/funcao')
+const {gravarUsuAutenticado, gravarUsuAutenticadoCadastro, limparSessao} = require('../models/autenticador_middleware')
 
 router.get("/", function (req, res) {
-    res.render("pages/home");
+    res.render("pages/home", {pagina:"home"});
 });
-
+router.post('/sair', limparSessao, function (req, res) {
+    res.redirect('/')
+  })
 /* ====================================Login=================================================== */
 
 router.get("/login", function (req, res) {
     res.render("pages/login", {pagina:"login", logado:null, dados: null, listaErros: null, dadosNotificacao: null});
 });
-router.post('/login', TarefasControl.regrasValidacaoFormLogin, function (req, res) {
+router.post('/login', TarefasControl.regrasValidacaoFormLogin, gravarUsuAutenticado, function (req, res) {
     TarefasControl.logar(req, res);
 })
 
@@ -23,7 +25,7 @@ router.get("/cadastro", function (req, res) {
     res.render("pages/cadastro", {pagina:"cadastro", logado:null, retorno: null, listaErros: null, dados: null, 
     dadosNotificacao: null  });
 });
-router.post("/cadastro", TarefasControl.regrasValidacao,  async function (req, res) {
+router.post("/cadastro", TarefasControl.regrasValidacao , gravarUsuAutenticadoCadastro , async function (req, res) {
     TarefasControl.Criarussuario(req,res)
 });
 /* ============================================================================================= */
@@ -40,7 +42,7 @@ router.get("/config", function (req, res) {
 })
 /* ======================================adm======================================================= */
 router.get("/adm", function (req, res) {
-    res.render("pages/adm/adm");
+    res.render("pages/adm/adm", {dadosNotificacao:null, logado:null});
 })
 
 module.exports = router;

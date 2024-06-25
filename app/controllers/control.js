@@ -1,6 +1,8 @@
 const tarefasModel = require("../models/models");
 const { body, validationResult } = require("express-validator");
 const { validaCPF } = require('../util/funcao')
+const bycrypt = require("bcryptjs");
+const salt = bycrypt.genSaltSync(12)
 
 const TarefasControl = {
     logar: (req, res) => {
@@ -8,21 +10,19 @@ const TarefasControl = {
         if (!erros.isEmpty()) {
             return res.render("pages/login", { pagina: "login", dados: req.body, listaErros: erros, logado: null, dadosNotificacao: null })
         }
-       /*  if (req.session.autenticado != null) {
+        if (req.session.autenticado != null) {
                 console.log(req.session.autenticado.tipo)
             if (req.session.autenticado.tipo == 1) {
-                res.render("pages/template-home", { pagina: "home", listaErros: null,logado: null, dados: null, dadosNotificacao:{titulo: "success", mensagem: "bem-vindo de volta ", tipo:"success"}})
-
+                res.render("pages/client/quartos", { pagina: "home", listaErros: null,logado: null, dados: null, dadosNotificacao:{titulo: "success", mensagem: "bem-vindo de volta ", tipo:"success"}})
 
             } else if (req.session.autenticado.tipo == 3) {
-                res.render("pages/adm/template-adm", { listaErros: null,logado: null, pagina:"index", dados: null, dadosNotificacao:{titulo: "success", mensagem: "bem-vindo adm ", tipo:"success"}});
+                res.render("pages/adm/adm", { listaErros: null,logado: null, pagina:"adm", dados: null, dadosNotificacao:{titulo: "success", mensagem: "bem-vindo adm ", tipo:"success"}});
             } else {
                 res.render("pages/login", { listaErros: null,logado: null, dados: null,dadosNotificacao:{titulo: "error", mensagem: "Usuário não permitido", tipo:"erros"} })
             }
-            
         }else {
             res.render("pages/login", { listaErros: null, dados: null,logado:null, dadosNotificacao:{titulo: "error", mensagem: "Usuário senha invalido ", tipo:"erros"} })
-        } */
+        }
 
     },
     regrasValidacaoFormLogin: [
@@ -51,7 +51,7 @@ const TarefasControl = {
             });
         }
         try {
-            await tarefasModel.create(req.body)
+            const resultados = await tarefasModel.create({ ...req.body, senha: bycrypt.hashSync(req.body.senha) })
 
             res.render("pages/client/quartos", {
                 logado: null, dadosNotificacao: {

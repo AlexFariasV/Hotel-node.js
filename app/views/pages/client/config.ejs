@@ -14,7 +14,13 @@
 
     <%- include('../../partial/menu.ejs')  %>
    
-    <a href="/">
+    <% if(autenticado){ %>
+
+        <span>Olá <%=autenticado %>!</span>
+
+    <% } %>
+    
+    <a href="/sair">
         <button class="sair">Sair</button>
     </a>
 
