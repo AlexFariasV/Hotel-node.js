@@ -13,16 +13,10 @@
 <body>
 
     <%- include('../../partial/menu.ejs')  %>
-   
-    <% if(autenticado){ %>
 
-        <span>Olá <%=autenticado %>!</span>
-
-    <% } %>
-    
-    <a href="/sair">
+    <form action="/sair" method="post">
         <button class="sair">Sair</button>
-    </a>
+    </form>
 
 </body>
 </html>

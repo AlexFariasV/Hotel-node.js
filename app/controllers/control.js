@@ -11,7 +11,6 @@ const TarefasControl = {
             return res.render("pages/login", { pagina: "login", dados: req.body, listaErros: erros, logado: null, dadosNotificacao: null })
         }
         if (req.session.autenticado != null) {
-                console.log(req.session.autenticado.tipo)
             if (req.session.autenticado.tipo == 1) {
                 res.render("pages/client/quartos", { pagina: "home", listaErros: null,logado: null, dados: null, dadosNotificacao:{titulo: "success", mensagem: "bem-vindo de volta ", tipo:"success"}})
 
@@ -42,7 +41,6 @@ const TarefasControl = {
     Criarussuario: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            console.log(errors);
             return res.render("pages/cadastro", {
                 dados: req.body,
                 listaErros: errors,
@@ -113,6 +111,27 @@ const TarefasControl = {
                 return true;
             })
     ],
+    
+
+    /* redirectByType: async (req, res) => {
+        const autenticado = req.session.autenticado
+
+        if (autenticado.tipo == 1) {
+            res.redirect("/cliente/solicitar-entrega");
+        } else if (autenticado.tipo == 2) {
+            const result = await cadastroModel.findByApproved(autenticado.id)
+            const isApproved = result.length > 0
+
+            if (isApproved) {
+                res.redirect("/entregador/entregas-solicitadas");
+            } else {
+                res.redirect("/cadastro-entregador");
+            }
+
+        } else if (autenticado.tipo == 3) {
+            res.redirect("/admin");
+        }
+    } */
 
 
 }

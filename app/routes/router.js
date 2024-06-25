@@ -3,14 +3,12 @@ var router = express.Router();
 var TarefasControl = require("../controllers/control")
 const { body, validationResult } = require("express-validator");
 const { notifyMessages } = require('../util/funcao')
-const {gravarUsuAutenticado, gravarUsuAutenticadoCadastro, limparSessao} = require('../models/autenticador_middleware')
+const {gravarUsuAutenticado, gravarUsuAutenticadoCadastro, limparSessao, verificarUsuAutorizado} = require('../models/autenticador_middleware')
 
 router.get("/", function (req, res) {
-    res.render("pages/home", {pagina:"home"});
+    res.render("pages/home", {pagina:"home", autenticado: req.session.autenticado});
 });
-router.post('/sair', limparSessao, function (req, res) {
-    res.redirect('/')
-  })
+
 /* ====================================Login=================================================== */
 
 router.get("/login", function (req, res) {
@@ -29,20 +27,26 @@ router.post("/cadastro", TarefasControl.regrasValidacao , gravarUsuAutenticadoCa
     TarefasControl.Criarussuario(req,res)
 });
 /* ============================================================================================= */
+router.post('/sair', limparSessao, function (req, res) {
+    res.redirect('/')
+}); 
+router.get('/verificar-autenticacao', verificarUsuAutorizado([1, 2, 3], 'pages/restrito'), function (req, res) {
+    TarefasControl.redirectByType(req, res)
+})
 
-router.get("/quartos", function (req, res) {
-    res.render("pages/client/quartos",{logado: null, dadosNotificacao: null,listaErros: null , dados: null});
+router.get("/quartos", verificarUsuAutorizado([1,3], 'pages/restrito'), function (req, res) {
+    res.render("pages/client/quartos",{logado: null, dadosNotificacao: null,listaErros: null , dados: null, autenticado: req.session.autenticado});
 });
-router.get("/perfil", function (req, res) {
-    res.render("pages/client/perfil");
+router.get("/perfil",verificarUsuAutorizado([1, 3], 'pages/restrito'), function (req, res) {
+    res.render("pages/client/perfil",{autenticado: req.session.autenticado});
 });
 
-router.get("/config", function (req, res) {
-    res.render("pages/client/config");
+router.get("/config",verificarUsuAutorizado([1, 3], 'pages/restrito'), function (req, res) {
+    res.render("pages/client/config",{autenticado: req.session.autenticado});
 })
 /* ======================================adm======================================================= */
-router.get("/adm", function (req, res) {
-    res.render("pages/adm/adm", {dadosNotificacao:null, logado:null});
+router.get("/adm", verificarUsuAutorizado([3], 'pages/restrito'), function (req, res) {
+    res.render("pages/adm/adm", {dadosNotificacao:null, logado:null, autenticado: req.session.autenticado});
 })
 
 module.exports = router;
