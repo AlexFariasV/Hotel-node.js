@@ -35,7 +35,12 @@ a {
 .space{
     height: 70px;
 }
-
+.zero{
+    margin: 0;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
 /*--------------header--------*/
 header {
     position: fixed;
@@ -207,25 +212,6 @@ button:hover{
     margin-left: 50px;
 }
 
-.home .image_item {
-    position: absolute;
-    top: 20%;
-    right: 20%;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.home .image_item img {
-    width: 140px;
-    height: 94px;
-    margin: 10px;
-    transition: 0.5s;
-}
-
-.home .image_item img.active {
-    border: 2px solid white;
-}
 
 .home .box .text {
     position: relative;
@@ -241,61 +227,7 @@ button:hover{
 }
 
 /*--------------home--------*/
-/*--------------book--------*/
-.flex {
-    display: flex;
-}
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px;
-}
-
-.book {
-    margin-top: 5%;
-    width: 100%;
-    height: 20vh;
-    color: white;
-}
-
-.book .input {
-    background: #242e5a;
-    padding: 20px 20px 40px 20px;
-}
-
-.book .search {
-    background: #3f9cc1;
-    padding: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    outline: none;
-    background: #263760;
-    margin-top: 20px;
-    color: white;
-}
-
-::placeholder {
-    color: white;
-}
-
-.book .search {
-    width: 20%;
-}
-
-.book .search input {
-    background: none;
-    border: none;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 40px;
-}
-
-/*--------------book--------*/
 /*--------------about--------*/
 .top {
     margin-top: 10%;
@@ -627,8 +559,7 @@ input {
         max-width: 100%;
     }
 
-    .home .box .text::after,
-    .home .image_item {
+    .home .box .text::after {
         display: none;
     }
 

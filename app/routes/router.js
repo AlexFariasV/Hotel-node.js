@@ -5,11 +5,12 @@ const { body, validationResult } = require("express-validator");
 const { notifyMessages } = require('../util/funcao')
 const {gravarUsuAutenticado, gravarUsuAutenticadoCadastro, limparSessao, verificarUsuAutorizado} = require('../models/autenticador_middleware')
 
+/* ====================================home============================================================== */
 router.get("/", function (req, res) {
     res.render("pages/home", {pagina:"home", autenticado: req.session.autenticado});
 });
 
-/* ====================================Login=================================================== */
+/* ====================================Login============================================================= */
 
 router.get("/login", function (req, res) {
     res.render("pages/login", {pagina:"login", logado:null, dados: null, listaErros: null, dadosNotificacao: null});
@@ -18,7 +19,7 @@ router.post('/login', TarefasControl.regrasValidacaoFormLogin, gravarUsuAutentic
     TarefasControl.logar(req, res);
 })
 
-/* =====================================Cadastro================================================= */
+/* =====================================Cadastro========================================================== */
 router.get("/cadastro", function (req, res) {
     res.render("pages/cadastro", {pagina:"cadastro", logado:null, retorno: null, listaErros: null, dados: null, 
     dadosNotificacao: null  });
@@ -26,14 +27,16 @@ router.get("/cadastro", function (req, res) {
 router.post("/cadastro", TarefasControl.regrasValidacao , gravarUsuAutenticadoCadastro , async function (req, res) {
     TarefasControl.Criarussuario(req,res)
 });
-/* ============================================================================================= */
+
+/* =========================================autenticaão===================================================== */
 router.post('/sair', limparSessao, function (req, res) {
     res.redirect('/')
 }); 
-router.get('/verificar-autenticacao', verificarUsuAutorizado([1, 2, 3], 'pages/restrito'), function (req, res) {
+router.get('/verificar-autenticacao', verificarUsuAutorizado([1, 3], 'pages/restrito'), function (req, res) {
     TarefasControl.redirectByType(req, res)
 })
 
+/* =========================================quartos========================================================= */
 router.get("/quartos", verificarUsuAutorizado([1,3], 'pages/restrito'), function (req, res) {
     res.render("pages/client/quartos",{logado: null, dadosNotificacao: null,listaErros: null , dados: null, autenticado: req.session.autenticado});
 });
@@ -44,7 +47,7 @@ router.get("/perfil",verificarUsuAutorizado([1, 3], 'pages/restrito'), function 
 router.get("/config",verificarUsuAutorizado([1, 3], 'pages/restrito'), function (req, res) {
     res.render("pages/client/config",{autenticado: req.session.autenticado});
 })
-/* ======================================adm======================================================= */
+/* ======================================adm==================================================================*/
 router.get("/adm", verificarUsuAutorizado([3], 'pages/restrito'), function (req, res) {
     res.render("pages/adm/adm", {dadosNotificacao:null, logado:null, autenticado: req.session.autenticado});
 })
