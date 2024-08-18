@@ -21,9 +21,6 @@ Projeto de treinamento de hotel com sistemas de login e cadastro & página adm.
 - Instale as dependências: npm install
 - ultilizar Banco de Dados Mysql & programa workbench mysql
 
-### Contribuidores
-- Alex Farias
-
 ### Licença
 Este projeto está licenciado sob a Licença MIT.
   
