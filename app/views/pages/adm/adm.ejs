@@ -1,26 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/resert.css">
+    <link rel="stylesheet" href="css/adm/adm.css">
+
     <title>Adm</title>
 
     <%- include('../../partial/link.ejs') %>
 
 </head>
+
 <body>
 
     <% if (dadosNotificacao) { %>
         <script>
-            notify("<%= dadosNotificacao.titulo%>","<%= dadosNotificacao.mensagem%>", "<%= dadosNotificacao.tipo%>", "center")
-            if("<%= dadosNotificacao.tipo %>" == "success"){
+            notify("<%= dadosNotificacao.titulo%>", "<%= dadosNotificacao.mensagem%>", "<%= dadosNotificacao.tipo%>", "center")
+            if ("<%= dadosNotificacao.tipo %>" == "success") {
                 setTimeout(3000)
             }                        
         </script>
-    <% } %>
+        <% } %>
+            <div class="container">
+                <div class="sidebar">
+                    <section>
+                        <h2>Usuários Cadastrado </h2>
 
-    <h1> Adm </h1>
-    
+                        <section class="box-acess">
+                            <h3>Total de usuário cadastrado - </h3>
+                        </section>
+
+                        <section class="box-acess">
+                            <h3>Acesso a página Quartos</h3> <br>
+                            <a href="/quartos">
+                                <button class="buttonAcess">Quartos</button>
+                            </a>
+                        </section>
+                        <section class="box-acess">
+                            <h3>Volta para home</h3> <br>
+                            <a href="/">
+                                <button class="buttonAcess">Home</button>
+                            </a>
+                        </section>
+                    </section>
+                    <form action="/sair" method="post">
+                        <button class="button">Sair</button>
+                    </form>
+                </div>
+                <div class="content">
+                    <section class="box-container">
+                        <h1>Usuários</h1>
+                        <p>Este é o texto principal da página. Aqui você pode adicionar qualquer conteúdo que deseja
+                            mostrar.</p>
+                    </section>
+                </div>
+            </div>
+
 </body>
+
 </html>

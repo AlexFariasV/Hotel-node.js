@@ -1,7 +1,14 @@
-para adicionar as depencencias use:
+Senha adm 
 
-npm config set strict-ssl false 
+email: helvinh@gmail.com
+senha: Teste@123
 
-npm install
+-------------------------------------------------
+instalções necessaria 
 
-npm install -g nodemon
+- npm install
+
+-------------------------------------------------
+Banco de dados Mysql e Workbench 
+
+-------------------------------------------------
