@@ -1,15 +1,2 @@
-// colors:
-
--#018abe
--#02457a
-
-//
-
-O que fazer 
-
-- criar um novo banco de dados so para esse projeto 
-- paginação 
-- continuar a homePages 
-- Colocar estrelas de avalição 
-
-
+helvinh@gmail.com
+Teste@123

@@ -35,7 +35,7 @@ a {
 }
 
 .space {
-    height: 70px;
+    height: 40px;
 }
 
 .zero {
@@ -70,11 +70,14 @@ header {
     backdrop-filter: blur(30px);
     box-shadow: 0px 0px 30px rgb(227, 228, 237, 0.37);
     border-bottom: 2px solid rgb(255, 255, 255, 0.18);
+    max-width: 100vw;
+    width: 100%;
 }
 
 .logo {
     color: #fff;
     padding: 30px 0;
+    font-size: 2rem;
 }
 
 header nav {
@@ -274,7 +277,8 @@ button:hover {
 
 .about {
     margin-bottom: 50px;
-    /*  background-color: #fff; */
+    max-width: 100vw;
+    padding: 20px;
 
 }
 
@@ -476,70 +480,6 @@ button:hover {
 }
 
 /*--------------wrapper2--------*/
-/*--------------restaurant--------*/
-.restaurant img {
-    width: 100%;
-    height: 100%;
-}
-
-.restaurant .right {
-    padding: 50px 50px 50px 100px;
-}
-
-.restaurant h2 {
-    margin-bottom: 20px;
-    font-weight: 400;
-}
-
-.restaurant .text p {
-    margin-bottom: 50px;
-    line-height: 25px;
-}
-
-.accordionItem {
-    margin-top: 30px;
-}
-
-.accordionItem p {
-    font-size: 15px;
-    opacity: 0.8;
-    font-family: sans-serif;
-    line-height: 20px;
-}
-
-.accordionIHeading {
-    cursor: pointer;
-    width: 100%;
-    border-radius: 3px;
-    font-weight: 400;
-    font-size: 17px;
-    color: #C1B086;
-    margin-bottom: 20px;
-}
-
-.close .accordionItemContent {
-    height: 0px;
-    transition: height 1s ease-out;
-    transform: scaleY(0);
-    float: left;
-    display: block;
-    background-color: #fff;
-}
-
-.open .accordionItemContent {
-    padding: 30px;
-    background-color: #fff;
-    width: 100%;
-    margin: 0 0 10px 0;
-    display: block;
-    transform: scaleY(1);
-    transform-origin: top;
-    transition: transform 0.4s ease;
-    box-sizing: border-box;
-    box-shadow: 0 13px 43px 0 rgb(37 46 89 / 10%);
-}
-
-/*--------------restaurant--------*/
 /*--------------gallary--------*/
 .gallary img {
     width: 270px;
@@ -571,15 +511,16 @@ button:hover {
 }
 
 /*--------------gallary--------*/
-/*--------------map--------*/
-.map iframe {
-    width: 100%;
-}
 
-/*--------------map--------*/
 /*--------------footer--------*/
-
-
+.footer{
+    width: 100%;
+    background-color: #3f9cc1;
+    min-height: 2rem;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
 
 
 /*--------------footer--------*/
@@ -678,5 +619,13 @@ button:hover {
 
     .restaurant .flex {
         flex-direction: column-reverse;
+    }
+}
+@media(max-width: 690px){
+    .about .img{
+        display: none;
+    }
+    .space{
+        height: 30px;
     }
 }
