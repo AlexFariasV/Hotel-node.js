@@ -1,0 +1,173 @@
+@media only screen and (max-width: 840px) {
+    header ul {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.5s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 20;
+    }
+
+    header ul.active {
+        left: 0%;
+    }
+
+    header ul li {
+        margin: 2.5rem 0;
+    }
+
+    header ul li a {
+        color: black;
+    }
+
+    .hambuger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hambuger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hambuger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hambuger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 930px) {
+    .home h1 {
+        font-size: 60px;
+    }
+    .home .box .text::after{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:840px) {
+    .home .box .text {
+        max-width: 100%;
+    }
+
+    .home .box .text::after {
+        display: none;
+    }
+
+    .restaurant .container,
+    .about .container,
+    .book .container {
+        flex-direction: column;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .book {
+        margin-top: 10%;
+        height: auto;
+    }
+
+    .book .search {
+        width: 100%;
+    }
+
+    .book .search input {
+        margin-top: 0;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .wrapper .text {
+        width: 80%;
+    }
+
+    .room {
+        margin-bottom: 100px;
+    }
+
+    .room .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .restaurant .right {
+        padding: 0;
+        margin-top: 50px;
+    }
+
+    footer .payment {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media only screen and (max-width:840px) {
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    .home h1 {
+        font-size: 40px;
+    }
+
+    .about p,
+    .home p {
+        margin: 50px 0 0 0;
+    }
+
+    .wrapper .text {
+        padding: 20px;
+
+    }
+
+    .heading_top {
+        margin-top: 100px;
+    }
+
+    .heading_top button {
+        display: none;
+    }
+
+    .restaurant .flex {
+        flex-direction: column-reverse;
+    }
+}
+@media(max-width: 690px){
+    .about .img{
+        display: none;
+    }
+    .space{
+        height: 30px;
+    }
+}
+@media(max-width:500px){
+    .wrapper .content{
+        grid-template-columns: auto;
+    }
+    .space-Amenities{
+        margin: 20px 0; 
+        height: 100px;
+    }
+}
+@media(max-width:410px){
+    .space-Amenities{
+        margin: 20% 0; 
+        height: 120px;
+    }
+    .heading .btn1 {
+        margin: 25px 0;
+    }
+    
+}
