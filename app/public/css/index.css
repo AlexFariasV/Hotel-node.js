@@ -40,9 +40,10 @@ a {
 
 .zero {
     margin: 0;
-    padding: 15px 30px;
+    padding: 13px 30px !important;
     font-size: 1.2rem;
     font-weight: 400;
+    border-radius: 5px !important;
 }
 .flex {
     display: flex;
@@ -125,18 +126,18 @@ header ul li a:hover {
 }
 
 .Button-Cadastro {
-    background-color: #3f9cc1;
+    background-color: #C1B086;
     padding: 10px 20px;
     border-radius: 8px;
     transition: all 150ms ease-in-out;
-    border: 2px solid #3f9cc1;
+    border: 2px solid #C1B086;
     color: #fff;
 
 }
 
 .Button-Cadastro:hover {
     background-color: transparent;
-    color: #3f9cc1 !important;
+    color: #fff !important;
 
 }
 

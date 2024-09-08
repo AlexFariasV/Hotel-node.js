@@ -11,11 +11,23 @@ const TarefasControl = {
             return res.render("pages/login", { pagina: "login", dados: req.body, listaErros: erros, logado: null, dadosNotificacao: null })
         }
         if (req.session.autenticado != null) {
-            if (req.session.autenticado.tipo == 1) {
-                res.render("pages/client/quartos", { pagina: "home", listaErros: null, logado: null, dados: null, dadosNotificacao: { titulo: "success", mensagem: "bem-vindo de volta ", tipo: "success" } })
-
+            if (req.session.autenticado.tipo == 1) {  
+            
+                req.session.dadosNotificacao = {
+                    titulo: "Login feito com sucesso",
+                    mensagem: `Bem-vindo de volta, ${req.session.autenticado.autenticado}`, 
+                    tipo: "success"
+                };
+                res.redirect("/quartos")
+            
             } else if (req.session.autenticado.tipo == 3) {
-                res.render("pages/adm/adm", { listaErros: null, logado: null, pagina: "adm", dados: null, dadosNotificacao: { titulo: "success", mensagem: "bem-vindo adm ", tipo: "success" } });
+                req.session.dadosNotificacao = {
+                    titulo: "Login feito com sucesso",
+                    mensagem: `Bem-vindo de volta adm, ${req.session.autenticado.autenticado}`, 
+                    tipo: "success"
+                };
+                res.redirect("/adm")
+
             } else {
                 res.render("pages/login", { listaErros: null, logado: null, dados: null, dadosNotificacao: { titulo: "error", mensagem: "Usuário não permitido", tipo: "erros" } })
             }
@@ -58,15 +70,19 @@ const TarefasControl = {
                 tipo: 1 // Ajuste de acordo com o tipo do usuário recém-criado
             };
 
-            res.render("pages/client/quartos", {
-                logado: null, dadosNotificacao: {
-                    titulo: "Cadastro realizado!",
-                    mensagem: "Novo usuário criado com sucesso!",
-                    tipo: "success"
-                }
-            })
+            req.session.dadosNotificacao = {
+                titulo: "Enviado",
+                mensagem: "Cadastro feito com sucesso",
+                tipo: "success"
+            };
+            
+
+            res.redirect("/quartos")
+
+            
         } catch (error) {
-            return error;
+            console.error(error); // Para depuração
+            res.status(500).send('Ocorreu um erro ao processar seu pedido.');
         }
     },
     regrasValidacao: [

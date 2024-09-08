@@ -38,7 +38,10 @@ router.get('/verificar-autenticacao', verificarUsuAutorizado([1, 3], 'pages/rest
 
 /* =========================================quartos========================================================= */
 router.get("/quartos", verificarUsuAutorizado([1,3], 'pages/restrito'), function (req, res) {
-    res.render("pages/client/quartos",{logado: null, dadosNotificacao: null,listaErros: null , dados: null, autenticado: req.session.autenticado});
+    const dadosNotificacao = req.session.dadosNotificacao || null;
+    delete req.session.dadosNotificacao; 
+
+    res.render("pages/client/quartos",{logado: null, dadosNotificacao: dadosNotificacao, listaErros: null , dados: null, autenticado: req.session.autenticado});
 });
 router.get("/perfil",verificarUsuAutorizado([1, 3], 'pages/restrito'), function (req, res) {
     res.render("pages/client/perfil",{autenticado: req.session.autenticado});
@@ -49,7 +52,9 @@ router.get("/config",verificarUsuAutorizado([1, 3], 'pages/restrito'), function 
 })
 /* ======================================adm==================================================================*/
 router.get("/adm", verificarUsuAutorizado([3], 'pages/restrito'), function (req, res) {
-    res.render("pages/adm/adm", {dadosNotificacao:null, logado:null, autenticado: req.session.autenticado});
+    const dadosNotificacao = req.session.dadosNotificacao || null;
+    delete req.session.dadosNotificacao; 
+    res.render("pages/adm/adm", {dadosNotificacao:dadosNotificacao, logado:null, autenticado: req.session.autenticado});
 })
 
 module.exports = router;

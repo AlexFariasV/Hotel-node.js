@@ -12,6 +12,10 @@ body {
 
 }
 
+a{
+  text-decoration: none;
+}
+
 /* =======================validator========================= */
 .erroForm {
   color: red;
@@ -70,7 +74,7 @@ body {
 
 .demo_button:hover {
   background-color: transparent;
-  color: blue;
+  color: #3f9cc1;
 }
 
 /* password */
