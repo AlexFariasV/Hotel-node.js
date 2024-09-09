@@ -12,3 +12,15 @@ instalções necessaria
 Banco de dados Mysql e Workbench 
 
 -------------------------------------------------
+<br>
+<% if (users && users.length > 0) { %>
+<% users.forEach(user => { %>
+<div>
+<span>ID: <%= user.id_usuario %></span>
+<span>Nome: <%= user.nome_usuario %></span>
+<span>Email: <%= user.email_usuario %></span>
+</div>
+<% }) %>
+<% } else { %>
+<p>Nenhum usuário cadastrado encontrado.</p>
+<% } %>
