@@ -1,4 +1,4 @@
-/* var pool = require("../../config/pool_conexoes");
+var pool = require("../../config/pool_conexoes");
 
 const admModel = {
     findAllUsers: async () => {
@@ -12,4 +12,3 @@ const admModel = {
 };
 
 module.exports = admModel;
- */

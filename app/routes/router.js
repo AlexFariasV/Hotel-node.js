@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var TarefasControl = require("../controllers/control")
+var admController = require("../controllers/admController")
 const { body, validationResult } = require("express-validator");
 const { notifyMessages } = require('../util/funcao')
 const {gravarUsuAutenticado, gravarUsuAutenticadoCadastro, limparSessao, verificarUsuAutorizado} = require('../models/autenticador_middleware')
@@ -52,9 +53,8 @@ router.get("/config",verificarUsuAutorizado([1, 3], 'pages/restrito'), function 
 })
 /* ======================================adm==================================================================*/
 router.get("/adm", verificarUsuAutorizado([3], 'pages/restrito'), function (req, res) {
-    const dadosNotificacao = req.session.dadosNotificacao || null;
-    delete req.session.dadosNotificacao; 
-    res.render("pages/adm/adm", {dadosNotificacao:dadosNotificacao, logado:null, autenticado: req.session.autenticado});
+    admController.listAllUsers (req,res)
+
 })
 
 module.exports = router;

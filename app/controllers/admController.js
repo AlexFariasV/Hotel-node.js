@@ -1,19 +1,21 @@
-/* const admModel = require('../models/admModels.js');
+const admModel = require('../models/admModels.js');
 
 const admController = {
     listAllUsers: async (req, res) => {
         try {
-            const result = await admModel.findAllUsers();
-            
-            const tipo = req.session.autenticado ? req.session.autenticado.tipo : null;
+            const User = await admModel.findAllUsers();
 
-            res.render('pages/adm/adm', { 
-                users: result,  
-                id: null, 
-                dados: null, 
-                listaErros: null, 
-                type: tipo, 
-                autenticado: req.session.autenticado 
+            // Salvando a notificação em uma variável temporária e remover da sessão
+            const notificacao = req.session.dadosNotificacao || null;
+            if (req.session.dadosNotificacao) {
+                delete req.session.dadosNotificacao;
+            }
+
+            // Renderizar a página 
+            res.render('pages/adm/adm', {
+                autenticado: req.session.autenticado,
+                User,
+                dadosNotificacao: notificacao
             });
 
         } catch (error) {
@@ -23,4 +25,3 @@ const admController = {
 };
 
 module.exports = admController;
- */

@@ -14,8 +14,15 @@
     <%- include('../../partial/link.ejs') %>
 
 </head>
-
 <body>
+    <style>
+        .BoxAllUSer{
+            background-color: #fff;
+            color: #333;
+            padding: 15px 15px 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
 
     <% if (dadosNotificacao) { %>
         <script>
@@ -54,20 +61,22 @@
                 </div>
                 <div class="content">
                     <section class="box-container">
-                        <h1>Usuários</h1>
-                        <p>Este é o texto principal da página. Aqui você pode adicionar qualquer conteúdo que deseja
-                            mostrar.</p>
-                            <section>
-                                <section class="">
-                                    <br>
-                                    <h2>Usuários cadastrados</h2>
-                                    <br>
-                                    <!-- Colocar user  -->
+                        <h1>Total de usuários cadastrado</h1>
+                                <br>
+                    
+                                <br>
+                                <!-- Colocar user  -->
 
-                                    <!--  -->
-                                </section>
-                            </section>
-                        <span>Oi</span>
+                                <% User.forEach(user=> { %>
+                                    <section class="BoxAllUSer">
+
+                                        <h2>Nome: <%= user.nome_usuario %>
+                                          <h1>Tste2
+                                            <h3>Teste3
+
+                                    </section> <br>
+
+                                    <% }) %>
                     </section>
                 </div>
             </div>
