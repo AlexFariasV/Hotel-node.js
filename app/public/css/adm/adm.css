@@ -91,3 +91,76 @@
     background-color: transparent;
     color: #C1B086;
 }
+/* Paginador */
+.notificador ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    justify-content: center;
+}
+
+.notificador a {
+    border: 1px solid #C1B086;
+    padding: 10px;
+    transition: all .3s;
+}
+
+.notificador a:not(.atual):hover {
+    background-color: #C1B086;
+    border: 1px solid #3333;
+    color: white;
+}
+
+.notificador .atual {
+    background-color: #C1B086;
+    color: white;
+}
+/* Paginador */
+/* Delete */
+.modal {
+    display: none; /* Modal inicia escondido */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.confirm-delete {
+    margin-top: 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.cancel-delete {
+    background-color: #bbb;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.flexModal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+}

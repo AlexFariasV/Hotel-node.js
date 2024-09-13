@@ -67,20 +67,44 @@
                                 <br>
                                 <!-- Colocar user  -->
 
-                                <% User.forEach(user=> { %>
+                                <% users.forEach(user=> { %>
                                     <section class="BoxAllUSer">
 
-                                        <h2>Nome: <%= user.nome_usuario %>
-                                          <h1>Tste2
-                                            <h3>Teste3
+                                        <h2>Nome: <%= user.nome_usuario %></h2><br>
+                                        <span><b>1. Email:</b> <%= user.email_usuario %></span><br>
+                                        <span><b>2. Cpf:</b> <%= user.cpf_usuario %></span>
+                                        
+                                        <form class="delete-form" action="/adm/delete/<%= user.id_usuario %>/<%= user.tipo_usuario %>?_method=DELETE" method="post">
+                                            <button class="delete button3">Excluir</button>
+                                        </form>
+                                        
+                                        
+                                        
 
                                     </section> <br>
 
                                     <% }) %>
+                                    <% if(paginador){ %>
+                                        <div class="notificador">
+                                            <ul>
+                                                <% for(var i=1; i <= paginador.total_paginas; i++){ 
+                                                    if(paginador.pagina_atual == i){ 
+                                                %>
+                                                    <li><a class="atual" href="?pagina=<%= i %>"><%= i %></a></li>
+                                                <% } else { %>
+                                                    <li><a href="?pagina=<%= i %>"><%= i %></a></li>
+                                                <% } 
+                                                } %>
+                                            </ul>
+                                        </div>
+                                    <% } %>
                     </section>
                 </div>
             </div>
 
+            <%- include('../../partial/modals/delete.ejs') %>
+
+            <script src="/js/delete.js"></script>
 </body>
 
 </html>

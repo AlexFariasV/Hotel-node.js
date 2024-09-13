@@ -57,4 +57,6 @@ router.get("/adm", verificarUsuAutorizado([3], 'pages/restrito'), function (req,
 
 })
 
+router.delete('/adm/delete/:id/:type', verificarUsuAutorizado([3], 'pages/restrito'), admController.deleteUse);
+
 module.exports = router;

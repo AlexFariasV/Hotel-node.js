@@ -103,7 +103,9 @@ CREATE TABLE `usuario` (
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` VALUES (1,'Helvética','helvinha','$2a$12$J1piFIoOATeGAlIOPW0HSuo.pWb/tBJabaoyNNMkxwgrLAG70MYFK','helvinh@gmail.com','493.807.920-85','11941549878',3,1);
-INSERT INTO `usuario` VALUES (2,'cliente','cliente','$2a$12$J1piFIoOATeGAlIOPW0HSuo.pWb/tBJabaoyNNMkxwgrLAG70MYFK','teste@teste.com','493.807.920-85','11941549878',1,1);
+INSERT INTO `usuario` VALUES (2,'Cliente1','cliente','$2a$12$J1piFIoOATeGAlIOPW0HSuo.pWb/tBJabaoyNNMkxwgrLAG70MYFK','teste@teste.com','493.807.920-85','11941549878',1,1);
+INSERT INTO `usuario` VALUES (3,'Cliente2','cliente','$2a$12$J1piFIoOATeGAlIOPW0HSuo.pWb/tBJabaoyNNMkxwgrLAG70MYFK','teste1@teste.com','493.807.920-85','11941549878',1,1);
+INSERT INTO `usuario` VALUES (4,'Cliente3','cliente','$2a$12$J1piFIoOATeGAlIOPW0HSuo.pWb/tBJabaoyNNMkxwgrLAG70MYFK','teste1@teste.com','493.807.920-85','11941549878',1,1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
