@@ -63,24 +63,18 @@
                     <section class="box-container">
                         <h1>Total de usuários cadastrado</h1>
                                 <br>
-                    
                                 <br>
-                                <!-- Colocar user  -->
-
                                 <% users.forEach(user=> { %>
                                     <section class="BoxAllUSer">
 
-                                        <h2>Nome: <%= user.nome_usuario %></h2><br>
-                                        <span><b>1. Email:</b> <%= user.email_usuario %></span><br>
-                                        <span><b>2. Cpf:</b> <%= user.cpf_usuario %></span>
+                                        <span><b>Nome Usuário:</b> <br><%= user.nome_usuario %></span><br>
+                                        <span><b>Email:</b> <br><%= user.email_usuario %></span><br>
+                                        <span><b>Cpf:</b> <br> <%= user.cpf_usuario %></span>
                                         
                                         <form class="delete-form" action="/adm/delete/<%= user.id_usuario %>/<%= user.tipo_usuario %>?_method=DELETE" method="post">
                                             <button class="delete button3">Excluir</button>
                                         </form>
                                         
-                                        
-                                        
-
                                     </section> <br>
 
                                     <% }) %>

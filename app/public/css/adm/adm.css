@@ -164,3 +164,22 @@
     align-items: center;
     height: 65vh;
 }
+.BoxAllUSer{
+    display: flex;
+    gap: 50px;
+    padding: 10px;
+    min-height: 100px;
+}
+.button3{
+    padding: 10px 20px;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 10px ;
+    transition: 200ms all ease-in-out;
+    cursor: pointer;
+}
+.button3:hover{
+    background-color: #c21b0f;
+
+}
