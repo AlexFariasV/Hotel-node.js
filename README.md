@@ -1,14 +1,15 @@
 # HOTEL NODE 
 
-Projeto de treinamento de hotel com sistemas de login e cadastro & página adm.
+![image](https://github.com/user-attachments/assets/6aac4573-3b2d-4b82-83d4-48c96003e34e)
 
-- Contendo apenas para tela de celulares
+
+## Projeto de treinamento de hotel com sistemas de login e cadastro & página adm.
 
 ### Funcionalidade Principal
 
 - sistema de login
 -  sistema de cadastro
--  página Adm podendo excluir contas, editar & criar
+-  página Adm.
 
 
 ### Tecnologias Utilizadas
@@ -23,4 +24,3 @@ Projeto de treinamento de hotel com sistemas de login e cadastro & página adm.
 
 ### Licença
 Este projeto está licenciado sob a Licença MIT.
-  
